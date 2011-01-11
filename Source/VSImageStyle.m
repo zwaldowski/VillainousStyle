@@ -1,9 +1,18 @@
 //
 //  VSImageStyle.m
-//  VSStyleMac
+//  VillainousStyle
 //
-//  Created by Steve Streza on 7/25/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 #import "VSImageStyle.h"
@@ -11,8 +20,7 @@
 
 @implementation VSImageStyle
 
-@synthesize imageURL = _imageURL, image = _image, defaultImage = _defaultImage,
-contentMode = _contentMode, size = _size;
+@synthesize imageURL = _imageURL, image = _image, defaultImage = _defaultImage, contentMode = _contentMode, size = _size;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
@@ -23,16 +31,14 @@ contentMode = _contentMode, size = _size;
 	return style;
 }
 
-+ (VSImageStyle*)styleWithImageURL:(NSString*)imageURL defaultImage:(VSImage*)defaultImage
-							  next:(VSStyle*)next {
++ (VSImageStyle*)styleWithImageURL:(NSString*)imageURL defaultImage:(VSImage*)defaultImage next:(VSStyle*)next {
 	VSImageStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.imageURL = imageURL;
 	style.defaultImage = defaultImage;
 	return style;
 }
 
-+ (VSImageStyle*)styleWithImageURL:(NSString*)imageURL defaultImage:(VSImage*)defaultImage
-					   contentMode:(UIViewContentMode)contentMode size:(CGSize)size next:(VSStyle*)next {
++ (VSImageStyle*)styleWithImageURL:(NSString*)imageURL defaultImage:(VSImage*)defaultImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size next:(VSStyle*)next {
 	VSImageStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.imageURL = imageURL;
 	style.defaultImage = defaultImage;
@@ -47,16 +53,14 @@ contentMode = _contentMode, size = _size;
 	return style;
 }
 
-+ (VSImageStyle*)styleWithImage:(VSImage*)image defaultImage:(VSImage*)defaultImage
-						   next:(VSStyle*)next {
++ (VSImageStyle*)styleWithImage:(VSImage*)image defaultImage:(VSImage*)defaultImage next:(VSStyle*)next {
 	VSImageStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.image = image;
 	style.defaultImage = defaultImage;
 	return style;
 }
 
-+ (VSImageStyle*)styleWithImage:(VSImage*)image defaultImage:(VSImage*)defaultImage
-					contentMode:(UIViewContentMode)contentMode size:(CGSize)size next:(VSStyle*)next {
++ (VSImageStyle*)styleWithImage:(VSImage*)image defaultImage:(VSImage*)defaultImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size next:(VSStyle*)next {
 	VSImageStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.image = image;
 	style.defaultImage = defaultImage;
@@ -135,7 +139,6 @@ contentMode = _contentMode, size = _size;
 
 - (VSImage*)image {
 	if (!_image && _imageURL) {
-//		_image = [[[VSURLCache sharedCache] imageForURL:_imageURL] retain];
 		NSURL *url = (NSURL *)_imageURL;
 		if([url isKindOfClass:[NSString class]]){
 			url = [NSURL URLWithString:(NSString *)url];

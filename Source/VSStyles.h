@@ -20,6 +20,7 @@
 #import "VSStyleDelegate.h"
 
 #import "VSStyle.h"
+#import "VSBlendStyle.h"
 #import "VSPartStyle.h"
 
 #import "VSSolidFillStyle.h"

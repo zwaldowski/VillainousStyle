@@ -17,7 +17,7 @@
 
 #import "VSGlobal.h"
 #import "VSGlobal.h"
-#import "VSStyle.h";
+#import "VSStyle.h"
 
 @interface VSInsetStyle : VSStyle {
 	UIEdgeInsets _inset;

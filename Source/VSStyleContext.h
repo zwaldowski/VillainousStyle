@@ -16,7 +16,6 @@
 //
 
 #import "VSGlobal.h"
-//#import <CoreGraphics/CoreGraphics.h>
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
@@ -28,6 +27,7 @@
 #import "VSStyleDelegate.h"
 
 @class VSShape, VSStyleContext;
+
 @interface VSStyleContext : NSObject {
     //STUB add your instance variables here
 	id<VSStyleDelegate> _delegate;

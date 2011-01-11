@@ -21,8 +21,7 @@ static CGFloat kInsetWidth = 5;
 
 @implementation VSSpeechBubbleShape
 
-@synthesize radius = _radius, pointLocation = _pointLocation, pointAngle = _pointAngle,
-pointSize = _pointSize;
+@synthesize radius = _radius, pointLocation = _pointLocation, pointAngle = _pointAngle, pointSize = _pointSize;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
@@ -74,7 +73,7 @@ pointSize = _pointSize;
 			 reset:(BOOL)reset {
 	CGFloat fw = size.width;
 	CGFloat fh = size.height;
-	CGFloat ph = _pointSize.height;
+	CGFloat ph;
 	CGFloat pointX = 0;
 	
 	if (lightSource >= 0 && lightSource <= 90) {
@@ -116,7 +115,7 @@ pointSize = _pointSize;
 				reset:(BOOL)reset {
 	CGFloat fw = size.width;
 	CGFloat fh = size.height;
-	CGFloat ph = _pointSize.height;
+	CGFloat ph;
 	CGFloat pointX = 0;
 	
 	if (reset) {

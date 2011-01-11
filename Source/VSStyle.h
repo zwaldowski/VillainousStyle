@@ -24,30 +24,28 @@ static const NSInteger kDefaultLightSource = 125;
 
 @interface VSStyle : NSObject {
 	VSStyle* _next;
-	VSStyle* _previous;
 }
 
 @property(nonatomic,retain) VSStyle* next;
-@property(nonatomic,readonly) VSStyle* previous;
 
-- (id)initWithNext:(VSStyle*)next;
+- (id)initWithNext:(VSStyle *)next;
+- (VSStyle *)next:(VSStyle *)next;
 
 - (void)draw:(VSStyleContext*)context;
 
 - (UIEdgeInsets)addToInsets:(UIEdgeInsets)insets forSize:(CGSize)size;
-- (CGSize)addToSize:(CGSize)size context:(VSStyleContext*)context;
+- (CGSize)addToSize:(CGSize)size context:(VSStyleContext *)context;
 
 - (void)addStyle:(VSStyle*)style;
 
 - (id)firstStyleOfClass:(Class)cls;
 - (id)styleForPart:(NSString*)name;
 
-- (CGGradientRef)newGradientWithColors:(VSColor**)colors count:(int)count ;
+- (CGGradientRef)newGradientWithColors:(VSColor**)colors count:(int)count;
+- (CGGradientRef)newGradientWithColors:(VSColor**)colors locations:(CGFloat*)locations count:(int)count;
 
 // all child styles with no value in their next
 // uses an NSSet in case future styles can have split layouts
 - (NSSet *) finalStyles;
 
-// the first node in a chain 
-- (VSStyle *)rootStyle;
 @end

@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* MobileVillainousAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MobileVillainousAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* MobileVillainousViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* MobileVillainousViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* MobileVillainousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MobileVillainousViewController.m */; };
+		6C1E243412DAE8700087AE68 /* DarkStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E243112DAE8700087AE68 /* DarkStyleSheet.m */; };
+		6C1E243512DAE8700087AE68 /* LightStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E243312DAE8700087AE68 /* LightStyleSheet.m */; };
+		6C1E254212DAE9430087AE68 /* VillainousStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E250B12DAE9430087AE68 /* VillainousStyle.h */; };
+		6C1E254312DAE9430087AE68 /* VSBevelBorderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E250C12DAE9430087AE68 /* VSBevelBorderStyle.h */; };
+		6C1E254412DAE9430087AE68 /* VSBevelBorderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E250D12DAE9430087AE68 /* VSBevelBorderStyle.m */; };
+		6C1E254512DAE9430087AE68 /* VSBoxStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E250E12DAE9430087AE68 /* VSBoxStyle.h */; };
+		6C1E254612DAE9430087AE68 /* VSBoxStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E250F12DAE9430087AE68 /* VSBoxStyle.m */; };
+		6C1E254712DAE9430087AE68 /* VSContentStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251012DAE9430087AE68 /* VSContentStyle.h */; };
+		6C1E254812DAE9430087AE68 /* VSContentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251112DAE9430087AE68 /* VSContentStyle.m */; };
+		6C1E254912DAE9430087AE68 /* VSFourBorderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251212DAE9430087AE68 /* VSFourBorderStyle.h */; };
+		6C1E254A12DAE9430087AE68 /* VSFourBorderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251312DAE9430087AE68 /* VSFourBorderStyle.m */; };
+		6C1E254B12DAE9430087AE68 /* VSGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251412DAE9430087AE68 /* VSGlobal.h */; };
+		6C1E254C12DAE9430087AE68 /* VSImageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251512DAE9430087AE68 /* VSImageStyle.h */; };
+		6C1E254D12DAE9430087AE68 /* VSImageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251612DAE9430087AE68 /* VSImageStyle.m */; };
+		6C1E254E12DAE9430087AE68 /* VSInnerShadowStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251712DAE9430087AE68 /* VSInnerShadowStyle.h */; };
+		6C1E254F12DAE9430087AE68 /* VSInnerShadowStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251812DAE9430087AE68 /* VSInnerShadowStyle.m */; };
+		6C1E255012DAE9430087AE68 /* VSInsetStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251912DAE9430087AE68 /* VSInsetStyle.h */; };
+		6C1E255112DAE9430087AE68 /* VSInsetStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251A12DAE9430087AE68 /* VSInsetStyle.m */; };
+		6C1E255212DAE9430087AE68 /* VSLinearGradientFillStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251B12DAE9430087AE68 /* VSLinearGradientFillStyle.h */; };
+		6C1E255312DAE9430087AE68 /* VSLinearGradientFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251C12DAE9430087AE68 /* VSLinearGradientFillStyle.m */; };
+		6C1E255412DAE9430087AE68 /* VSMaskStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251D12DAE9430087AE68 /* VSMaskStyle.h */; };
+		6C1E255512DAE9430087AE68 /* VSMaskStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E251E12DAE9430087AE68 /* VSMaskStyle.m */; };
+		6C1E255612DAE9430087AE68 /* VSPartStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E251F12DAE9430087AE68 /* VSPartStyle.h */; };
+		6C1E255712DAE9430087AE68 /* VSPartStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252012DAE9430087AE68 /* VSPartStyle.m */; };
+		6C1E255812DAE9430087AE68 /* VSRectangleShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252112DAE9430087AE68 /* VSRectangleShape.h */; };
+		6C1E255912DAE9430087AE68 /* VSRectangleShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252212DAE9430087AE68 /* VSRectangleShape.m */; };
+		6C1E255A12DAE9430087AE68 /* VSReflectiveFillStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252312DAE9430087AE68 /* VSReflectiveFillStyle.h */; };
+		6C1E255B12DAE9430087AE68 /* VSReflectiveFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252412DAE9430087AE68 /* VSReflectiveFillStyle.m */; };
+		6C1E255C12DAE9430087AE68 /* VSRoundedLeftArrowShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252512DAE9430087AE68 /* VSRoundedLeftArrowShape.h */; };
+		6C1E255D12DAE9430087AE68 /* VSRoundedLeftArrowShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252612DAE9430087AE68 /* VSRoundedLeftArrowShape.m */; };
+		6C1E255E12DAE9430087AE68 /* VSRoundedRectangleShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252712DAE9430087AE68 /* VSRoundedRectangleShape.h */; };
+		6C1E255F12DAE9430087AE68 /* VSRoundedRectangleShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252812DAE9430087AE68 /* VSRoundedRectangleShape.m */; };
+		6C1E256012DAE9430087AE68 /* VSRoundedRightArrowShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252912DAE9430087AE68 /* VSRoundedRightArrowShape.h */; };
+		6C1E256112DAE9430087AE68 /* VSRoundedRightArrowShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252A12DAE9430087AE68 /* VSRoundedRightArrowShape.m */; };
+		6C1E256212DAE9430087AE68 /* VSShadowStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252B12DAE9430087AE68 /* VSShadowStyle.h */; };
+		6C1E256312DAE9430087AE68 /* VSShadowStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252C12DAE9430087AE68 /* VSShadowStyle.m */; };
+		6C1E256412DAE9430087AE68 /* VSShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252D12DAE9430087AE68 /* VSShape.h */; };
+		6C1E256512DAE9430087AE68 /* VSShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E252E12DAE9430087AE68 /* VSShape.m */; };
+		6C1E256612DAE9430087AE68 /* VSShapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E252F12DAE9430087AE68 /* VSShapes.h */; };
+		6C1E256712DAE9430087AE68 /* VSShapeStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253012DAE9430087AE68 /* VSShapeStyle.h */; };
+		6C1E256812DAE9430087AE68 /* VSShapeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253112DAE9430087AE68 /* VSShapeStyle.m */; };
+		6C1E256912DAE9430087AE68 /* VSSolidBorderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253212DAE9430087AE68 /* VSSolidBorderStyle.h */; };
+		6C1E256A12DAE9430087AE68 /* VSSolidBorderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253312DAE9430087AE68 /* VSSolidBorderStyle.m */; };
+		6C1E256B12DAE9430087AE68 /* VSSolidFillStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253412DAE9430087AE68 /* VSSolidFillStyle.h */; };
+		6C1E256C12DAE9430087AE68 /* VSSolidFillStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253512DAE9430087AE68 /* VSSolidFillStyle.m */; };
+		6C1E256D12DAE9430087AE68 /* VSSpeechBubbleShape.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253612DAE9430087AE68 /* VSSpeechBubbleShape.h */; };
+		6C1E256E12DAE9430087AE68 /* VSSpeechBubbleShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253712DAE9430087AE68 /* VSSpeechBubbleShape.m */; };
+		6C1E256F12DAE9430087AE68 /* VSStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253812DAE9430087AE68 /* VSStyle.h */; };
+		6C1E257012DAE9430087AE68 /* VSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253912DAE9430087AE68 /* VSStyle.m */; };
+		6C1E257112DAE9430087AE68 /* VSStyleContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253A12DAE9430087AE68 /* VSStyleContext.h */; };
+		6C1E257212DAE9430087AE68 /* VSStyleContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253B12DAE9430087AE68 /* VSStyleContext.m */; };
+		6C1E257312DAE9430087AE68 /* VSStyleDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253C12DAE9430087AE68 /* VSStyleDelegate.h */; };
+		6C1E257412DAE9430087AE68 /* VSStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253D12DAE9430087AE68 /* VSStyles.h */; };
+		6C1E257512DAE9430087AE68 /* VSStyleSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E253E12DAE9430087AE68 /* VSStyleSheet.h */; };
+		6C1E257612DAE9430087AE68 /* VSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E253F12DAE9430087AE68 /* VSStyleSheet.m */; };
+		6C1E257712DAE9430087AE68 /* VSTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E254012DAE9430087AE68 /* VSTextStyle.h */; };
+		6C1E257812DAE9430087AE68 /* VSTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E254112DAE9430087AE68 /* VSTextStyle.m */; };
+		6C1E25B412DAE9710087AE68 /* CALayer+VSStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25A812DAE9710087AE68 /* CALayer+VSStyle.h */; };
+		6C1E25B512DAE9710087AE68 /* CALayer+VSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25A912DAE9710087AE68 /* CALayer+VSStyle.m */; };
+		6C1E25B612DAE9710087AE68 /* NSColor+CGColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25AA12DAE9710087AE68 /* NSColor+CGColor.h */; };
+		6C1E25B712DAE9710087AE68 /* NSColor+CGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25AB12DAE9710087AE68 /* NSColor+CGColor.m */; };
+		6C1E25B812DAE9710087AE68 /* NSColor+VSStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25AC12DAE9710087AE68 /* NSColor+VSStyle.h */; };
+		6C1E25B912DAE9710087AE68 /* NSColor+VSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25AD12DAE9710087AE68 /* NSColor+VSStyle.m */; };
+		6C1E25BA12DAE9710087AE68 /* NSImage+CGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25AE12DAE9710087AE68 /* NSImage+CGImage.h */; };
+		6C1E25BB12DAE9710087AE68 /* NSImage+CGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25AF12DAE9710087AE68 /* NSImage+CGImage.m */; };
+		6C1E25BC12DAE9710087AE68 /* NSImage+ContentMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25B012DAE9710087AE68 /* NSImage+ContentMode.h */; };
+		6C1E25BD12DAE9710087AE68 /* NSImage+ContentMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25B112DAE9710087AE68 /* NSImage+ContentMode.m */; };
+		6C1E25BE12DAE9710087AE68 /* NSView+VSStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C1E25B212DAE9710087AE68 /* NSView+VSStyle.h */; };
+		6C1E25BF12DAE9710087AE68 /* NSView+VSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E25B312DAE9710087AE68 /* NSView+VSStyle.m */; };
+		6C1E25CA12DAE9B90087AE68 /* libVillainousStyle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1E245312DAE8E00087AE68 /* libVillainousStyle.a */; };
+		6C6A4B3C12DBD0AE008A84E3 /* VSStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A4B3B12DBD0AE008A84E3 /* VSStyleView.m */; };
+		6C6A4BE112DBD628008A84E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6A4BE012DBD628008A84E3 /* QuartzCore.framework */; };
+		6C6A4BFB12DBD752008A84E3 /* doom-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6A4BFA12DBD752008A84E3 /* doom-icon.png */; };
+		6C6A4CB712DC3605008A84E3 /* VSBlendStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C6A4CB512DC3605008A84E3 /* VSBlendStyle.h */; };
+		6C6A4CB812DC3605008A84E3 /* VSBlendStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6A4CB612DC3605008A84E3 /* VSBlendStyle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C1E25C812DAE9B50087AE68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C1E245212DAE8E00087AE68;
+			remoteInfo = "iOS Static Library";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* MobileVillainousAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileVillainousAppDelegate.h; path = iOS/MobileVillainousAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MobileVillainousAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileVillainousAppDelegate.m; path = iOS/MobileVillainousAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* MobileVillainous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileVillainous.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* MobileVillainousViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MobileVillainousViewController.xib; path = iOS/MobileVillainousViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = iOS/MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* MobileVillainousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileVillainousViewController.h; path = iOS/MobileVillainousViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* MobileVillainousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileVillainousViewController.m; path = iOS/MobileVillainousViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MobileVillainous_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileVillainous_Prefix.pch; path = iOS/MobileVillainous_Prefix.pch; sourceTree = "<group>"; };
+		6C1E243012DAE8700087AE68 /* DarkStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkStyleSheet.h; sourceTree = "<group>"; };
+		6C1E243112DAE8700087AE68 /* DarkStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkStyleSheet.m; sourceTree = "<group>"; };
+		6C1E243212DAE8700087AE68 /* LightStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightStyleSheet.h; sourceTree = "<group>"; };
+		6C1E243312DAE8700087AE68 /* LightStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightStyleSheet.m; sourceTree = "<group>"; };
+		6C1E245312DAE8E00087AE68 /* libVillainousStyle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVillainousStyle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1E250B12DAE9430087AE68 /* VillainousStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VillainousStyle.h; path = Source/VillainousStyle.h; sourceTree = "<group>"; };
+		6C1E250C12DAE9430087AE68 /* VSBevelBorderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSBevelBorderStyle.h; path = Source/VSBevelBorderStyle.h; sourceTree = "<group>"; };
+		6C1E250D12DAE9430087AE68 /* VSBevelBorderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSBevelBorderStyle.m; path = Source/VSBevelBorderStyle.m; sourceTree = "<group>"; };
+		6C1E250E12DAE9430087AE68 /* VSBoxStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSBoxStyle.h; path = Source/VSBoxStyle.h; sourceTree = "<group>"; };
+		6C1E250F12DAE9430087AE68 /* VSBoxStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSBoxStyle.m; path = Source/VSBoxStyle.m; sourceTree = "<group>"; };
+		6C1E251012DAE9430087AE68 /* VSContentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSContentStyle.h; path = Source/VSContentStyle.h; sourceTree = "<group>"; };
+		6C1E251112DAE9430087AE68 /* VSContentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSContentStyle.m; path = Source/VSContentStyle.m; sourceTree = "<group>"; };
+		6C1E251212DAE9430087AE68 /* VSFourBorderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSFourBorderStyle.h; path = Source/VSFourBorderStyle.h; sourceTree = "<group>"; };
+		6C1E251312DAE9430087AE68 /* VSFourBorderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSFourBorderStyle.m; path = Source/VSFourBorderStyle.m; sourceTree = "<group>"; };
+		6C1E251412DAE9430087AE68 /* VSGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGlobal.h; path = Source/VSGlobal.h; sourceTree = "<group>"; };
+		6C1E251512DAE9430087AE68 /* VSImageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSImageStyle.h; path = Source/VSImageStyle.h; sourceTree = "<group>"; };
+		6C1E251612DAE9430087AE68 /* VSImageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSImageStyle.m; path = Source/VSImageStyle.m; sourceTree = "<group>"; };
+		6C1E251712DAE9430087AE68 /* VSInnerShadowStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSInnerShadowStyle.h; path = Source/VSInnerShadowStyle.h; sourceTree = "<group>"; };
+		6C1E251812DAE9430087AE68 /* VSInnerShadowStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSInnerShadowStyle.m; path = Source/VSInnerShadowStyle.m; sourceTree = "<group>"; };
+		6C1E251912DAE9430087AE68 /* VSInsetStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSInsetStyle.h; path = Source/VSInsetStyle.h; sourceTree = "<group>"; };
+		6C1E251A12DAE9430087AE68 /* VSInsetStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSInsetStyle.m; path = Source/VSInsetStyle.m; sourceTree = "<group>"; };
+		6C1E251B12DAE9430087AE68 /* VSLinearGradientFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSLinearGradientFillStyle.h; path = Source/VSLinearGradientFillStyle.h; sourceTree = "<group>"; };
+		6C1E251C12DAE9430087AE68 /* VSLinearGradientFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSLinearGradientFillStyle.m; path = Source/VSLinearGradientFillStyle.m; sourceTree = "<group>"; };
+		6C1E251D12DAE9430087AE68 /* VSMaskStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMaskStyle.h; path = Source/VSMaskStyle.h; sourceTree = "<group>"; };
+		6C1E251E12DAE9430087AE68 /* VSMaskStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMaskStyle.m; path = Source/VSMaskStyle.m; sourceTree = "<group>"; };
+		6C1E251F12DAE9430087AE68 /* VSPartStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPartStyle.h; path = Source/VSPartStyle.h; sourceTree = "<group>"; };
+		6C1E252012DAE9430087AE68 /* VSPartStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSPartStyle.m; path = Source/VSPartStyle.m; sourceTree = "<group>"; };
+		6C1E252112DAE9430087AE68 /* VSRectangleShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRectangleShape.h; path = Source/VSRectangleShape.h; sourceTree = "<group>"; };
+		6C1E252212DAE9430087AE68 /* VSRectangleShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRectangleShape.m; path = Source/VSRectangleShape.m; sourceTree = "<group>"; };
+		6C1E252312DAE9430087AE68 /* VSReflectiveFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReflectiveFillStyle.h; path = Source/VSReflectiveFillStyle.h; sourceTree = "<group>"; };
+		6C1E252412DAE9430087AE68 /* VSReflectiveFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReflectiveFillStyle.m; path = Source/VSReflectiveFillStyle.m; sourceTree = "<group>"; };
+		6C1E252512DAE9430087AE68 /* VSRoundedLeftArrowShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRoundedLeftArrowShape.h; path = Source/VSRoundedLeftArrowShape.h; sourceTree = "<group>"; };
+		6C1E252612DAE9430087AE68 /* VSRoundedLeftArrowShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRoundedLeftArrowShape.m; path = Source/VSRoundedLeftArrowShape.m; sourceTree = "<group>"; };
+		6C1E252712DAE9430087AE68 /* VSRoundedRectangleShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRoundedRectangleShape.h; path = Source/VSRoundedRectangleShape.h; sourceTree = "<group>"; };
+		6C1E252812DAE9430087AE68 /* VSRoundedRectangleShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRoundedRectangleShape.m; path = Source/VSRoundedRectangleShape.m; sourceTree = "<group>"; };
+		6C1E252912DAE9430087AE68 /* VSRoundedRightArrowShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRoundedRightArrowShape.h; path = Source/VSRoundedRightArrowShape.h; sourceTree = "<group>"; };
+		6C1E252A12DAE9430087AE68 /* VSRoundedRightArrowShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRoundedRightArrowShape.m; path = Source/VSRoundedRightArrowShape.m; sourceTree = "<group>"; };
+		6C1E252B12DAE9430087AE68 /* VSShadowStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSShadowStyle.h; path = Source/VSShadowStyle.h; sourceTree = "<group>"; };
+		6C1E252C12DAE9430087AE68 /* VSShadowStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSShadowStyle.m; path = Source/VSShadowStyle.m; sourceTree = "<group>"; };
+		6C1E252D12DAE9430087AE68 /* VSShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSShape.h; path = Source/VSShape.h; sourceTree = "<group>"; };
+		6C1E252E12DAE9430087AE68 /* VSShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSShape.m; path = Source/VSShape.m; sourceTree = "<group>"; };
+		6C1E252F12DAE9430087AE68 /* VSShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSShapes.h; path = Source/VSShapes.h; sourceTree = "<group>"; };
+		6C1E253012DAE9430087AE68 /* VSShapeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSShapeStyle.h; path = Source/VSShapeStyle.h; sourceTree = "<group>"; };
+		6C1E253112DAE9430087AE68 /* VSShapeStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSShapeStyle.m; path = Source/VSShapeStyle.m; sourceTree = "<group>"; };
+		6C1E253212DAE9430087AE68 /* VSSolidBorderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSolidBorderStyle.h; path = Source/VSSolidBorderStyle.h; sourceTree = "<group>"; };
+		6C1E253312DAE9430087AE68 /* VSSolidBorderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSolidBorderStyle.m; path = Source/VSSolidBorderStyle.m; sourceTree = "<group>"; };
+		6C1E253412DAE9430087AE68 /* VSSolidFillStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSolidFillStyle.h; path = Source/VSSolidFillStyle.h; sourceTree = "<group>"; };
+		6C1E253512DAE9430087AE68 /* VSSolidFillStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSolidFillStyle.m; path = Source/VSSolidFillStyle.m; sourceTree = "<group>"; };
+		6C1E253612DAE9430087AE68 /* VSSpeechBubbleShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSpeechBubbleShape.h; path = Source/VSSpeechBubbleShape.h; sourceTree = "<group>"; };
+		6C1E253712DAE9430087AE68 /* VSSpeechBubbleShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSpeechBubbleShape.m; path = Source/VSSpeechBubbleShape.m; sourceTree = "<group>"; };
+		6C1E253812DAE9430087AE68 /* VSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyle.h; path = Source/VSStyle.h; sourceTree = "<group>"; };
+		6C1E253912DAE9430087AE68 /* VSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStyle.m; path = Source/VSStyle.m; sourceTree = "<group>"; };
+		6C1E253A12DAE9430087AE68 /* VSStyleContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyleContext.h; path = Source/VSStyleContext.h; sourceTree = "<group>"; };
+		6C1E253B12DAE9430087AE68 /* VSStyleContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStyleContext.m; path = Source/VSStyleContext.m; sourceTree = "<group>"; };
+		6C1E253C12DAE9430087AE68 /* VSStyleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyleDelegate.h; path = Source/VSStyleDelegate.h; sourceTree = "<group>"; };
+		6C1E253D12DAE9430087AE68 /* VSStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyles.h; path = Source/VSStyles.h; sourceTree = "<group>"; };
+		6C1E253E12DAE9430087AE68 /* VSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyleSheet.h; path = Source/VSStyleSheet.h; sourceTree = "<group>"; };
+		6C1E253F12DAE9430087AE68 /* VSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStyleSheet.m; path = Source/VSStyleSheet.m; sourceTree = "<group>"; };
+		6C1E254012DAE9430087AE68 /* VSTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSTextStyle.h; path = Source/VSTextStyle.h; sourceTree = "<group>"; };
+		6C1E254112DAE9430087AE68 /* VSTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSTextStyle.m; path = Source/VSTextStyle.m; sourceTree = "<group>"; };
+		6C1E25A812DAE9710087AE68 /* CALayer+VSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+VSStyle.h"; path = "Source/Categories/CALayer+VSStyle.h"; sourceTree = "<group>"; };
+		6C1E25A912DAE9710087AE68 /* CALayer+VSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+VSStyle.m"; path = "Source/Categories/CALayer+VSStyle.m"; sourceTree = "<group>"; };
+		6C1E25AA12DAE9710087AE68 /* NSColor+CGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+CGColor.h"; path = "Source/Categories/NSColor+CGColor.h"; sourceTree = "<group>"; };
+		6C1E25AB12DAE9710087AE68 /* NSColor+CGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+CGColor.m"; path = "Source/Categories/NSColor+CGColor.m"; sourceTree = "<group>"; };
+		6C1E25AC12DAE9710087AE68 /* NSColor+VSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+VSStyle.h"; path = "Source/Categories/NSColor+VSStyle.h"; sourceTree = "<group>"; };
+		6C1E25AD12DAE9710087AE68 /* NSColor+VSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+VSStyle.m"; path = "Source/Categories/NSColor+VSStyle.m"; sourceTree = "<group>"; };
+		6C1E25AE12DAE9710087AE68 /* NSImage+CGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+CGImage.h"; path = "Source/Categories/NSImage+CGImage.h"; sourceTree = "<group>"; };
+		6C1E25AF12DAE9710087AE68 /* NSImage+CGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+CGImage.m"; path = "Source/Categories/NSImage+CGImage.m"; sourceTree = "<group>"; };
+		6C1E25B012DAE9710087AE68 /* NSImage+ContentMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+ContentMode.h"; path = "Source/Categories/NSImage+ContentMode.h"; sourceTree = "<group>"; };
+		6C1E25B112DAE9710087AE68 /* NSImage+ContentMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+ContentMode.m"; path = "Source/Categories/NSImage+ContentMode.m"; sourceTree = "<group>"; };
+		6C1E25B212DAE9710087AE68 /* NSView+VSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+VSStyle.h"; path = "Source/Categories/NSView+VSStyle.h"; sourceTree = "<group>"; };
+		6C1E25B312DAE9710087AE68 /* NSView+VSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+VSStyle.m"; path = "Source/Categories/NSView+VSStyle.m"; sourceTree = "<group>"; };
+		6C6A4B3A12DBD0AE008A84E3 /* VSStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStyleView.h; path = iOS/VSStyleView.h; sourceTree = "<group>"; };
+		6C6A4B3B12DBD0AE008A84E3 /* VSStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStyleView.m; path = iOS/VSStyleView.m; sourceTree = "<group>"; };
+		6C6A4BE012DBD628008A84E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		6C6A4BFA12DBD752008A84E3 /* doom-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "doom-icon.png"; path = "iOS/doom-icon.png"; sourceTree = "<group>"; };
+		6C6A4CB512DC3605008A84E3 /* VSBlendStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSBlendStyle.h; path = Source/VSBlendStyle.h; sourceTree = "<group>"; };
+		6C6A4CB612DC3605008A84E3 /* VSBlendStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSBlendStyle.m; path = Source/VSBlendStyle.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* MobileVillainous-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "MobileVillainous-Info.plist"; path = "iOS/MobileVillainous-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				6C1E25CA12DAE9B90087AE68 /* libVillainousStyle.a in Frameworks */,
+				6C6A4BE112DBD628008A84E3 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1E245112DAE8E00087AE68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* MobileVillainous.app */,
+				6C1E245312DAE8E00087AE68 /* libVillainousStyle.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAF0912DA829B0037797B /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				6C6A4BE012DBD628008A84E3 /* QuartzCore.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C1E242712DAE8050087AE68 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E242F12DAE8700087AE68 /* Demo Stylesheets */,
+				6C6A4B8512DBD503008A84E3 /* Other Sources */,
+				2899E5210DE3E06400AC0155 /* MobileVillainousViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* MobileVillainous-Info.plist */,
+				1D3623240D0F684500981E51 /* MobileVillainousAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MobileVillainousAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* MobileVillainousViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* MobileVillainousViewController.m */,
+				6C6A4B3A12DBD0AE008A84E3 /* VSStyleView.h */,
+				6C6A4B3B12DBD0AE008A84E3 /* VSStyleView.m */,
+				6C6A4BFA12DBD752008A84E3 /* doom-icon.png */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		6C1E242F12DAE8700087AE68 /* Demo Stylesheets */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E243012DAE8700087AE68 /* DarkStyleSheet.h */,
+				6C1E243112DAE8700087AE68 /* DarkStyleSheet.m */,
+				6C1E243212DAE8700087AE68 /* LightStyleSheet.h */,
+				6C1E243312DAE8700087AE68 /* LightStyleSheet.m */,
+			);
+			path = "Demo Stylesheets";
+			sourceTree = "<group>";
+		};
+		6C1E257E12DAE9590087AE68 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E25A812DAE9710087AE68 /* CALayer+VSStyle.h */,
+				6C1E25A912DAE9710087AE68 /* CALayer+VSStyle.m */,
+				6C1E25AA12DAE9710087AE68 /* NSColor+CGColor.h */,
+				6C1E25AB12DAE9710087AE68 /* NSColor+CGColor.m */,
+				6C1E25AC12DAE9710087AE68 /* NSColor+VSStyle.h */,
+				6C1E25AD12DAE9710087AE68 /* NSColor+VSStyle.m */,
+				6C1E25AE12DAE9710087AE68 /* NSImage+CGImage.h */,
+				6C1E25AF12DAE9710087AE68 /* NSImage+CGImage.m */,
+				6C1E25B012DAE9710087AE68 /* NSImage+ContentMode.h */,
+				6C1E25B112DAE9710087AE68 /* NSImage+ContentMode.m */,
+				6C1E25B212DAE9710087AE68 /* NSView+VSStyle.h */,
+				6C1E25B312DAE9710087AE68 /* NSView+VSStyle.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		6C6A4B2812DBCFE4008A84E3 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E250C12DAE9430087AE68 /* VSBevelBorderStyle.h */,
+				6C1E250D12DAE9430087AE68 /* VSBevelBorderStyle.m */,
+				6C6A4CB512DC3605008A84E3 /* VSBlendStyle.h */,
+				6C6A4CB612DC3605008A84E3 /* VSBlendStyle.m */,
+				6C1E250E12DAE9430087AE68 /* VSBoxStyle.h */,
+				6C1E250F12DAE9430087AE68 /* VSBoxStyle.m */,
+				6C1E251012DAE9430087AE68 /* VSContentStyle.h */,
+				6C1E251112DAE9430087AE68 /* VSContentStyle.m */,
+				6C1E251212DAE9430087AE68 /* VSFourBorderStyle.h */,
+				6C1E251312DAE9430087AE68 /* VSFourBorderStyle.m */,
+				6C1E251512DAE9430087AE68 /* VSImageStyle.h */,
+				6C1E251612DAE9430087AE68 /* VSImageStyle.m */,
+				6C1E251712DAE9430087AE68 /* VSInnerShadowStyle.h */,
+				6C1E251812DAE9430087AE68 /* VSInnerShadowStyle.m */,
+				6C1E251912DAE9430087AE68 /* VSInsetStyle.h */,
+				6C1E251A12DAE9430087AE68 /* VSInsetStyle.m */,
+				6C1E251B12DAE9430087AE68 /* VSLinearGradientFillStyle.h */,
+				6C1E251C12DAE9430087AE68 /* VSLinearGradientFillStyle.m */,
+				6C1E251D12DAE9430087AE68 /* VSMaskStyle.h */,
+				6C1E251E12DAE9430087AE68 /* VSMaskStyle.m */,
+				6C1E251F12DAE9430087AE68 /* VSPartStyle.h */,
+				6C1E252012DAE9430087AE68 /* VSPartStyle.m */,
+				6C1E252312DAE9430087AE68 /* VSReflectiveFillStyle.h */,
+				6C1E252412DAE9430087AE68 /* VSReflectiveFillStyle.m */,
+				6C1E252B12DAE9430087AE68 /* VSShadowStyle.h */,
+				6C1E252C12DAE9430087AE68 /* VSShadowStyle.m */,
+				6C1E253012DAE9430087AE68 /* VSShapeStyle.h */,
+				6C1E253112DAE9430087AE68 /* VSShapeStyle.m */,
+				6C1E253212DAE9430087AE68 /* VSSolidBorderStyle.h */,
+				6C1E253312DAE9430087AE68 /* VSSolidBorderStyle.m */,
+				6C1E253412DAE9430087AE68 /* VSSolidFillStyle.h */,
+				6C1E253512DAE9430087AE68 /* VSSolidFillStyle.m */,
+				6C1E253812DAE9430087AE68 /* VSStyle.h */,
+				6C1E253912DAE9430087AE68 /* VSStyle.m */,
+				6C1E253A12DAE9430087AE68 /* VSStyleContext.h */,
+				6C1E253B12DAE9430087AE68 /* VSStyleContext.m */,
+				6C1E253C12DAE9430087AE68 /* VSStyleDelegate.h */,
+				6C1E253D12DAE9430087AE68 /* VSStyles.h */,
+				6C1E253E12DAE9430087AE68 /* VSStyleSheet.h */,
+				6C1E253F12DAE9430087AE68 /* VSStyleSheet.m */,
+				6C1E254012DAE9430087AE68 /* VSTextStyle.h */,
+				6C1E254112DAE9430087AE68 /* VSTextStyle.m */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		6C6A4B2A12DBCFF8008A84E3 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E252112DAE9430087AE68 /* VSRectangleShape.h */,
+				6C1E252212DAE9430087AE68 /* VSRectangleShape.m */,
+				6C1E252512DAE9430087AE68 /* VSRoundedLeftArrowShape.h */,
+				6C1E252612DAE9430087AE68 /* VSRoundedLeftArrowShape.m */,
+				6C1E252712DAE9430087AE68 /* VSRoundedRectangleShape.h */,
+				6C1E252812DAE9430087AE68 /* VSRoundedRectangleShape.m */,
+				6C1E252912DAE9430087AE68 /* VSRoundedRightArrowShape.h */,
+				6C1E252A12DAE9430087AE68 /* VSRoundedRightArrowShape.m */,
+				6C1E252D12DAE9430087AE68 /* VSShape.h */,
+				6C1E252E12DAE9430087AE68 /* VSShape.m */,
+				6C1E252F12DAE9430087AE68 /* VSShapes.h */,
+				6C1E253612DAE9430087AE68 /* VSSpeechBubbleShape.h */,
+				6C1E253712DAE9430087AE68 /* VSSpeechBubbleShape.m */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
+		6C6A4B8512DBD503008A84E3 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* MobileVillainous_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		6C7AAF0912DA829B0037797B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C1E250B12DAE9430087AE68 /* VillainousStyle.h */,
+				6C1E251412DAE9430087AE68 /* VSGlobal.h */,
+				6C1E257E12DAE9590087AE68 /* Additions */,
+				6C6A4B2812DBCFE4008A84E3 /* Styles */,
+				6C6A4B2A12DBCFF8008A84E3 /* Shapes */,
+				6C1E242712DAE8050087AE68 /* Demo */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C1E244F12DAE8E00087AE68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1E254212DAE9430087AE68 /* VillainousStyle.h in Headers */,
+				6C1E254312DAE9430087AE68 /* VSBevelBorderStyle.h in Headers */,
+				6C1E254512DAE9430087AE68 /* VSBoxStyle.h in Headers */,
+				6C1E254712DAE9430087AE68 /* VSContentStyle.h in Headers */,
+				6C1E254912DAE9430087AE68 /* VSFourBorderStyle.h in Headers */,
+				6C1E254B12DAE9430087AE68 /* VSGlobal.h in Headers */,
+				6C1E254C12DAE9430087AE68 /* VSImageStyle.h in Headers */,
+				6C1E254E12DAE9430087AE68 /* VSInnerShadowStyle.h in Headers */,
+				6C1E255012DAE9430087AE68 /* VSInsetStyle.h in Headers */,
+				6C1E255212DAE9430087AE68 /* VSLinearGradientFillStyle.h in Headers */,
+				6C1E255412DAE9430087AE68 /* VSMaskStyle.h in Headers */,
+				6C1E255612DAE9430087AE68 /* VSPartStyle.h in Headers */,
+				6C1E255812DAE9430087AE68 /* VSRectangleShape.h in Headers */,
+				6C1E255A12DAE9430087AE68 /* VSReflectiveFillStyle.h in Headers */,
+				6C1E255C12DAE9430087AE68 /* VSRoundedLeftArrowShape.h in Headers */,
+				6C1E255E12DAE9430087AE68 /* VSRoundedRectangleShape.h in Headers */,
+				6C1E256012DAE9430087AE68 /* VSRoundedRightArrowShape.h in Headers */,
+				6C1E256212DAE9430087AE68 /* VSShadowStyle.h in Headers */,
+				6C1E256412DAE9430087AE68 /* VSShape.h in Headers */,
+				6C1E256612DAE9430087AE68 /* VSShapes.h in Headers */,
+				6C1E256712DAE9430087AE68 /* VSShapeStyle.h in Headers */,
+				6C1E256912DAE9430087AE68 /* VSSolidBorderStyle.h in Headers */,
+				6C1E256B12DAE9430087AE68 /* VSSolidFillStyle.h in Headers */,
+				6C1E256D12DAE9430087AE68 /* VSSpeechBubbleShape.h in Headers */,
+				6C1E256F12DAE9430087AE68 /* VSStyle.h in Headers */,
+				6C1E257112DAE9430087AE68 /* VSStyleContext.h in Headers */,
+				6C1E257312DAE9430087AE68 /* VSStyleDelegate.h in Headers */,
+				6C1E257412DAE9430087AE68 /* VSStyles.h in Headers */,
+				6C1E257512DAE9430087AE68 /* VSStyleSheet.h in Headers */,
+				6C1E257712DAE9430087AE68 /* VSTextStyle.h in Headers */,
+				6C1E25B412DAE9710087AE68 /* CALayer+VSStyle.h in Headers */,
+				6C1E25B612DAE9710087AE68 /* NSColor+CGColor.h in Headers */,
+				6C1E25B812DAE9710087AE68 /* NSColor+VSStyle.h in Headers */,
+				6C1E25BA12DAE9710087AE68 /* NSImage+CGImage.h in Headers */,
+				6C1E25BC12DAE9710087AE68 /* NSImage+ContentMode.h in Headers */,
+				6C1E25BE12DAE9710087AE68 /* NSView+VSStyle.h in Headers */,
+				6C6A4CB712DC3605008A84E3 /* VSBlendStyle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iOS Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iOS Demo" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C1E25C912DAE9B50087AE68 /* PBXTargetDependency */,
+			);
+			name = "iOS Demo";
+			productName = MobileVillainous;
+			productReference = 1D6058910D05DD3D006BFB54 /* MobileVillainous.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C1E245212DAE8E00087AE68 /* iOS Static Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C1E245D12DAE9010087AE68 /* Build configuration list for PBXNativeTarget "iOS Static Library" */;
+			buildPhases = (
+				6C1E244F12DAE8E00087AE68 /* Headers */,
+				6C1E245012DAE8E00087AE68 /* Sources */,
+				6C1E245112DAE8E00087AE68 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Static Library";
+			productName = VillainousStyle;
+			productReference = 6C1E245312DAE8E00087AE68 /* libVillainousStyle.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "VillainousStyle iOS" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iOS Demo */,
+				6C1E245212DAE8E00087AE68 /* iOS Static Library */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* MobileVillainousViewController.xib in Resources */,
+				6C6A4BFB12DBD752008A84E3 /* doom-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1E243412DAE8700087AE68 /* DarkStyleSheet.m in Sources */,
+				6C1E243512DAE8700087AE68 /* LightStyleSheet.m in Sources */,
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* MobileVillainousAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* MobileVillainousViewController.m in Sources */,
+				6C6A4B3C12DBD0AE008A84E3 /* VSStyleView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1E245012DAE8E00087AE68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1E254412DAE9430087AE68 /* VSBevelBorderStyle.m in Sources */,
+				6C1E254612DAE9430087AE68 /* VSBoxStyle.m in Sources */,
+				6C1E254812DAE9430087AE68 /* VSContentStyle.m in Sources */,
+				6C1E254A12DAE9430087AE68 /* VSFourBorderStyle.m in Sources */,
+				6C1E254D12DAE9430087AE68 /* VSImageStyle.m in Sources */,
+				6C1E254F12DAE9430087AE68 /* VSInnerShadowStyle.m in Sources */,
+				6C1E255112DAE9430087AE68 /* VSInsetStyle.m in Sources */,
+				6C1E255312DAE9430087AE68 /* VSLinearGradientFillStyle.m in Sources */,
+				6C1E255512DAE9430087AE68 /* VSMaskStyle.m in Sources */,
+				6C1E255712DAE9430087AE68 /* VSPartStyle.m in Sources */,
+				6C1E255912DAE9430087AE68 /* VSRectangleShape.m in Sources */,
+				6C1E255B12DAE9430087AE68 /* VSReflectiveFillStyle.m in Sources */,
+				6C1E255D12DAE9430087AE68 /* VSRoundedLeftArrowShape.m in Sources */,
+				6C1E255F12DAE9430087AE68 /* VSRoundedRectangleShape.m in Sources */,
+				6C1E256112DAE9430087AE68 /* VSRoundedRightArrowShape.m in Sources */,
+				6C1E256312DAE9430087AE68 /* VSShadowStyle.m in Sources */,
+				6C1E256512DAE9430087AE68 /* VSShape.m in Sources */,
+				6C1E256812DAE9430087AE68 /* VSShapeStyle.m in Sources */,
+				6C1E256A12DAE9430087AE68 /* VSSolidBorderStyle.m in Sources */,
+				6C1E256C12DAE9430087AE68 /* VSSolidFillStyle.m in Sources */,
+				6C1E256E12DAE9430087AE68 /* VSSpeechBubbleShape.m in Sources */,
+				6C1E257012DAE9430087AE68 /* VSStyle.m in Sources */,
+				6C1E257212DAE9430087AE68 /* VSStyleContext.m in Sources */,
+				6C1E257612DAE9430087AE68 /* VSStyleSheet.m in Sources */,
+				6C1E257812DAE9430087AE68 /* VSTextStyle.m in Sources */,
+				6C1E25B512DAE9710087AE68 /* CALayer+VSStyle.m in Sources */,
+				6C1E25B712DAE9710087AE68 /* NSColor+CGColor.m in Sources */,
+				6C1E25B912DAE9710087AE68 /* NSColor+VSStyle.m in Sources */,
+				6C1E25BB12DAE9710087AE68 /* NSImage+CGImage.m in Sources */,
+				6C1E25BD12DAE9710087AE68 /* NSImage+ContentMode.m in Sources */,
+				6C1E25BF12DAE9710087AE68 /* NSView+VSStyle.m in Sources */,
+				6C6A4CB812DC3605008A84E3 /* VSBlendStyle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C1E25C912DAE9B50087AE68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C1E245212DAE8E00087AE68 /* iOS Static Library */;
+			targetProxy = 6C1E25C812DAE9B50087AE68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iOS/MobileVillainous_Prefix.pch;
+				INFOPLIST_FILE = "iOS/MobileVillainous-Info.plist";
+				PRODUCT_NAME = MobileVillainous;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iOS/MobileVillainous_Prefix.pch;
+				INFOPLIST_FILE = "iOS/MobileVillainous-Info.plist";
+				PRODUCT_NAME = MobileVillainous;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C1E245412DAE8E00087AE68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_IPHONE;
+				PREBINDING = NO;
+				PRODUCT_NAME = VillainousStyle;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6C1E245512DAE8E00087AE68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_IPHONE;
+				PREBINDING = NO;
+				PRODUCT_NAME = VillainousStyle;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iOS Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C1E245D12DAE9010087AE68 /* Build configuration list for PBXNativeTarget "iOS Static Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C1E245412DAE8E00087AE68 /* Debug */,
+				6C1E245512DAE8E00087AE68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "VillainousStyle iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

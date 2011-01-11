@@ -25,14 +25,12 @@
 	NSInteger _lightSource;
 }
 
-@property(nonatomic,retain) VSColor* highlight;
-@property(nonatomic,retain) VSColor* shadow;
-@property(nonatomic) CGFloat width;
-@property(nonatomic) NSInteger lightSource;
+@property (nonatomic,retain) VSColor* highlight;
+@property (nonatomic,retain) VSColor* shadow;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) NSInteger lightSource;
 
 + (VSBevelBorderStyle*)styleWithColor:(VSColor*)color width:(CGFloat)width next:(VSStyle*)next;
-
-+ (VSBevelBorderStyle*)styleWithHighlight:(VSColor*)highlight shadow:(VSColor*)shadow
-									width:(CGFloat)width lightSource:(NSInteger)lightSource next:(VSStyle*)next;
++ (VSBevelBorderStyle*)styleWithHighlight:(VSColor*)highlight shadow:(VSColor*)shadow width:(CGFloat)width lightSource:(NSInteger)lightSource next:(VSStyle*)next;
 
 @end

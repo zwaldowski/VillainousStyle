@@ -27,12 +27,7 @@ font = _font, didDrawContent = _didDrawContent;
 
 - (id)init {
 	if (self = [super init]) {
-		_delegate = nil;
-		_frame = CGRectZero;
 		_contentFrame = CGRectZero;
-		_shape = nil;
-		_font = nil;
-		_didDrawContent = NO;
 	}
 	return self;
 }

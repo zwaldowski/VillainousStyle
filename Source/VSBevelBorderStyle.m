@@ -16,7 +16,7 @@
 //
 
 #import "VSBevelBorderStyle.h"
-#import "NSColorAdditions.h"
+#import "NSColor+VSStyle.h"
 
 @implementation VSBevelBorderStyle
 

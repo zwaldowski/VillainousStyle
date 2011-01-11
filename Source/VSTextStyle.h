@@ -1,9 +1,18 @@
 //
 //  VSTextStyle.h
-//  VSStyleMac
+//  VillainousStyle
 //
-//  Created by Steve Streza on 7/25/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 
 #import "VSGlobal.h"
@@ -45,6 +54,7 @@ typedef enum {
 	VSColor* _shadowColor;
 	CGSize _shadowOffset;
 	CGFloat _minimumFontSize;
+	NSInteger _numberOfLines;
 	UITextAlignment _textAlignment;
 	UIControlContentVerticalAlignment _verticalAlignment;
 	UILineBreakMode _lineBreakMode;
@@ -54,21 +64,30 @@ typedef enum {
 @property(nonatomic,retain) VSColor* color;
 @property(nonatomic,retain) VSColor* shadowColor;
 @property(nonatomic) CGFloat minimumFontSize;
+@property(nonatomic) NSInteger numberOfLines;
 @property(nonatomic) CGSize shadowOffset;
 @property(nonatomic) UITextAlignment textAlignment;
 @property(nonatomic) UIControlContentVerticalAlignment verticalAlignment;
 @property(nonatomic) UILineBreakMode lineBreakMode;
 
-+ (VSTextStyle*)styleWithFont:(VSFont*)font next:(VSStyle*)next;
-+ (VSTextStyle*)styleWithColor:(VSColor*)color next:(VSStyle*)next;
-+ (VSTextStyle*)styleWithFont:(VSFont*)font color:(VSColor*)color next:(VSStyle*)next;
-+ (VSTextStyle*)styleWithFont:(VSFont*)font color:(VSColor*)color
-                textAlignment:(UITextAlignment)textAlignment next:(VSStyle*)next;
-+ (VSTextStyle*)styleWithFont:(VSFont*)font color:(VSColor*)color
-				  shadowColor:(VSColor*)shadowColor shadowOffset:(CGSize)shadowOffset
-						 next:(VSStyle*)next;
-+ (VSTextStyle*)styleWithFont:(VSFont*)font color:(VSColor*)color
-			  minimumFontSize:(CGFloat)minimumFontSize
-				  shadowColor:(VSColor*)shadowColor shadowOffset:(CGSize)shadowOffset
-						 next:(VSStyle*)next;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithColor:(VSColor*)aColor next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
+                textAlignment:(UITextAlignment)aTextAlignment next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
+				  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
+						 next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
+			  minimumFontSize:(CGFloat)aMinimumFontSize
+				  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
+						 next:(VSStyle*)nextStyle;
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
+              minimumFontSize:(CGFloat)aMinimumFontSize
+                  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
+                textAlignment:(UITextAlignment)aTextAlignment
+            verticalAlignment:(UIControlContentVerticalAlignment)aVerticalAlignment
+                lineBreakMode:(UILineBreakMode)aLineBreakMode numberOfLines:(NSInteger)aNumberOfLines
+                         next:(VSStyle*)nextStyle;
+
 @end

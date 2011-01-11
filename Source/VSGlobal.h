@@ -15,8 +15,6 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 #else
@@ -37,31 +35,27 @@ static inline UIEdgeInsets UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat b
 #pragma mark Color/Image/Font compatibility
 
 #if TARGET_OS_IPHONE
-#define VSColorRGB(__r, __g, __b)        ([UIColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:1.0 ])
-#define VSColorRGBA(__r, __g, __b, __a) ([UIColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:(__a)])
 @compatibility_alias VSColor UIColor;
 @compatibility_alias VSImage UIImage;
 @compatibility_alias VSFont  UIFont;
-#elif TARGET_OS_MAC
-#define VSColorRGB(__r, __g, __b)        ([NSColor colorWithCalibratedRed:(__r) green:(__g) blue:(__b) alpha:1.0 ])
-#define VSColorRGBA(__r, __g, __b, __a) ([NSColor colorWithCalibratedRed:(__r) green:(__g) blue:(__b) alpha:(__a)])
+#else
 #define UIGraphicsGetCurrentContext() ((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort])
 @compatibility_alias VSColor NSColor;
 @compatibility_alias VSImage NSImage;
 @compatibility_alias VSFont  NSFont;
 #endif
 
-#define VSColorRGB256(__r, __g, __b)        (VSColorRGB((__r)/256.,(__g)/256.,(__b)/256.))
-#define VSColorRGBA256(__r, __g, __b, __a) (VSColorRGBA((__r)/256.,(__g)/256.,(__b)/256.,(__a)/256.))
+#define VSColorRGB(__r, __g, __b)		[VSColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:1.0 ]
+#define VSColorRGBA(__r, __g, __b, __a)	[VSColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:(__a)]
+#define VSColorHSV(__h, __s, __v)		[VSColor colorWithHue:(__h) saturation:(__s) value:(__v) alpha:1.0]
+
+#define ZEROLIMIT(_VALUE) (_VALUE < 0 ? 0 : (_VALUE > 1 ? 1 : _VALUE))
 
 #define UIEdgeInsetsZero (UIEdgeInsets){ 0.0, 0.0, 0.0, 0.0 }
 
 #define VS_RELEASE_SAFELY(__POINTER) { [__POINTER release]; __POINTER = nil; }
 
-#define VSRectInset(rect, insets) \
-CGRectMake(rect.origin.x + insets.left, rect.origin.y + insets.top, \
-rect.size.width - (insets.left + insets.right), \
-rect.size.height - (insets.top + insets.bottom))
+#define VSRectInset(rect, insets) CGRectMake(rect.origin.x + insets.left, rect.origin.y + insets.top, rect.size.width - (insets.left + insets.right), rect.size.height - (insets.top + insets.bottom))
 	
 #define VS_ROUNDED -1
 #define VSRadius(_RADIUS) (_RADIUS == VS_ROUNDED ? round(fh/2) : _RADIUS)
