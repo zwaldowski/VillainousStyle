@@ -4,11 +4,12 @@ Overview
 VillainousStyle is a drawing library for defining a visual style from a chain of individual drawing instructions. Each instruction modifies the drawing context to perform common drawing operations such as creating shadows, fills, borders, and shapes. It allows for multiple style sheets which can be used to theme an application in multiple visual contexts. VillainousStyle sits on top of CoreGraphics, and does not use WebKit for rendering at all. It is a fork of the VSStyle and VSShape classes, originally from the [Three20 project](http://github.com/joehewitt/three20).
 
 This fork of VillainousStyle includes two Xcode projects, supporting a total of five targets:  
+
 * VillainousStyle.framework for use on Mac OS X
 * libVillainousStyle.a for use on Mac OS X
-* Villainous, a demo app built for Mac OS X
-* libVillainousStyle.a for use in building iOS apps
-* MobileVillainous, a demo app built for iOS
+* VillainousTest, a Mac demo app
+* libVillainousStyle.a for use with iOS apps
+* MobileVillainous, an iOS demo app
 
 Requirements
 ============
@@ -70,8 +71,9 @@ VillainousStyle can draw both styles and shapes.  Styles affect drawing and posi
 Screenshots
 ===========
 
-![Light Test Style](http://github.com/amazingsyco/VillainousStyle/raw/master/Screenshots/light-test-style.png "Light Test Style")
-![Dark Test Style](http://github.com/amazingsyco/VillainousStyle/raw/master/Screenshots/dark-test-style.png "Dark Test Style")
+![Light Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/light-test-style.png "Light Test Style")
+![Dark Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/dark-test-style.png "Dark Test Style")
+![iOS Test](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-test.png "iOS Style")
 
 License
 =======
