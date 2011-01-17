@@ -19,12 +19,35 @@
 
 @class VSStyle;
 
-#if TARGET_OS_IPHONE
-@interface UIView (VSStyleAdditions)
-#else
-@interface NSView (VSStyleAdditions)
-#endif
+@interface VSIView (VSStyleAdditions)
 
 -(void)drawStyle:(VSStyle *)style inRect:(CGRect)rect;
+-(void)drawStyle:(VSStyle *)style;
+
+@property (nonatomic) CGFloat left;
+@property (nonatomic) CGFloat top;
+@property (nonatomic) CGFloat right;
+@property (nonatomic) CGFloat bottom;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic, readonly) CGFloat screenX;
+@property (nonatomic, readonly) CGFloat screenY;
+@property (nonatomic, readonly) CGRect screenFrame;
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGSize size;
+- (VSIView*)descendantOrSelfWithClass:(Class)cls;
+- (VSIView*)ancestorOrSelfWithClass:(Class)cls;
+- (void)removeAllSubviews;
+- (CGPoint)offsetFromView:(VSIView*)otherView;
+
+#if !TARGET_OS_IPHONE
+- (void)setNeedsDisplay;
+#endif
 
 @end
+
+#if !TARGET_OS_IPHONE
+@interface NSScrollView (VSStyleAdditions)
+@property (nonatomic) CGPoint contentOffset;
+@end
+#endif

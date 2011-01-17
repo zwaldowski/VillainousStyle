@@ -23,7 +23,7 @@
 @synthesize margin = _margin, padding = _padding, minSize = _minSize, position = _position;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSBoxStyle*)styleWithMargin:(UIEdgeInsets)margin next:(VSStyle*)next {
 	VSBoxStyle* style = [[[self alloc] initWithNext:next] autorelease];
@@ -43,16 +43,14 @@
 	return style;
 }
 
-+ (VSBoxStyle*)styleWithMargin:(UIEdgeInsets)margin padding:(UIEdgeInsets)padding
-						  next:(VSStyle*)next {
++ (VSBoxStyle*)styleWithMargin:(UIEdgeInsets)margin padding:(UIEdgeInsets)padding next:(VSStyle*)next {
 	VSBoxStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.margin = margin;
 	style.padding = padding;
 	return style;
 }
 
-+ (VSBoxStyle*)styleWithMargin:(UIEdgeInsets)margin padding:(UIEdgeInsets)padding
-					   minSize:(CGSize)minSize position:(VSPosition)position next:(VSStyle*)next {
++ (VSBoxStyle*)styleWithMargin:(UIEdgeInsets)margin padding:(UIEdgeInsets)padding minSize:(CGSize)minSize position:(VSPosition)position next:(VSStyle*)next {
 	VSBoxStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.margin = margin;
 	style.padding = padding;

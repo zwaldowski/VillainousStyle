@@ -16,11 +16,12 @@
 //
 
 #import "VSReflectiveFillStyle.h"
+#import "NSColor+CGColor.h"
 #import "NSColor+VSStyle.h"
 
 @implementation VSReflectiveFillStyle
 
-@synthesize color = _color;
+@synthesize color = _color, withBottomHighlight = _withBottomHighlight;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
@@ -28,6 +29,14 @@
 + (VSReflectiveFillStyle*)styleWithColor:(VSColor*)color next:(VSStyle*)next {
 	VSReflectiveFillStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.color = color;
+	style.withBottomHighlight = NO;
+	return style;
+}
+
++ (VSReflectiveFillStyle*)styleWithColor:(VSColor*)color withBottomHighlight:(BOOL)withBottomHighlight next:(VSStyle*)next {
+	VSReflectiveFillStyle* style = [[[self alloc] initWithNext:next] autorelease];
+	style.color = color;
+	style.withBottomHighlight = withBottomHighlight;
 	return style;
 }
 
@@ -42,7 +51,7 @@
 }
 
 - (void)dealloc {
-	[_color release];
+	VS_RELEASE_SAFELY(_color);
 	[super dealloc];
 }
 
@@ -60,42 +69,36 @@
 	[_color setFill];
 	CGContextFillRect(ctx, rect);
 	
-	// XXjoe These numbers are totally biased towards the colors I tested with.  I need to figure out
-	// a formula that works well for all colors
-	VSColor* lighter = nil, *darker = nil;
-	if (_color.value < 0.5) {
-		lighter = VSColorHSV(_color.hue, ZEROLIMIT(_color.saturation-0.5), ZEROLIMIT(_color.value+0.25));
-		darker = VSColorHSV(_color.hue, ZEROLIMIT(_color.saturation-0.1), ZEROLIMIT(_color.value+0.1));
-	} else if (_color.saturation > 0.6) {
-		lighter = VSColorHSV(_color.hue, _color.saturation*0.3, _color.value*1);
-		darker = VSColorHSV(_color.hue, _color.saturation*0.9, _color.value+0.05);
+	VSColor* topStartHighlight = [VSColor colorWithWhite:1.0 alpha:0.52];
+	VSColor* topEndHighlight = [VSColor colorWithWhite:1.0 alpha:0.12];
+	VSColor* clearColor = [VSColor colorWithWhite:1.0 alpha:0.0];
+	
+	VSColor* botEndHighlight;
+	if( _withBottomHighlight ) {
+		botEndHighlight = [VSColor colorWithWhite:1.0 alpha:0.27];
 	} else {
-		lighter = VSColorHSV(_color.hue, _color.saturation*0.4, _color.value*1.2);
-		darker = VSColorHSV(_color.hue, _color.saturation*0.9, _color.value+0.05);
+		botEndHighlight = clearColor;
 	}
-	//  //VSColor* lighter = [_color multiplyHue:1 saturation:0.5 value:1.35];
-	//  //VSColor* darker = [_color multiplyHue:1 saturation:0.88 value:1.05];
-	VSColor* colors[] = 
+	
+	VSColor* colors[] = {
+		topStartHighlight, topEndHighlight,
+		clearColor,
+		clearColor, botEndHighlight};
+	CGFloat locations[] = {0, 0.5, 0.5, 0.6, 1.0};
+	
 #if TARGET_OS_IPHONE
-	{lighter, darker};
+	CGPoint topPoint = CGPointMake(rect.origin.x, rect.origin.y);
+	CGPoint bottomPoint = CGPointMake(rect.origin.x, rect.origin.y+rect.size.height);
 #else
-	{darker, lighter};
+	CGPoint bottomPoint = CGPointMake(rect.origin.x, rect.origin.y);
+	CGPoint topPoint = CGPointMake(rect.origin.x, rect.origin.y+rect.size.height);
+	
 #endif
 	
-	CGPoint topPoint = CGPointMake(rect.origin.x, rect.origin.y+(rect.size.height * 0.5));
-	CGPoint bottomPoint = CGPointMake(rect.origin.x, 
-									  rect.origin.y+rect.size.height);
-#if TARGET_OS_IPHONE
-	bottomPoint.y = rect.origin.y + (rect.size.height * 0.0);
-#endif
+	CGGradientRef gradient = [self newGradientWithColors:colors locations:locations count:5];
 	
-	CGGradientRef gradient = [self newGradientWithColors:colors count:2];
-	CGContextDrawLinearGradient(ctx, gradient, 
-								topPoint,
-								bottomPoint,
-								kCGGradientDrawsAfterEndLocation );
+	CGContextDrawLinearGradient(ctx, gradient,  topPoint, bottomPoint, kCGGradientDrawsAfterEndLocation );
 	CGGradientRelease(gradient);
-	
 	CGContextRestoreGState(ctx);
 	
 	return [self.next draw:context];

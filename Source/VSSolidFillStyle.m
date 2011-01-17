@@ -42,7 +42,7 @@
 }
 
 - (void)dealloc {
-	[_color release];
+	VS_RELEASE_SAFELY(_color);
 	[super dealloc];
 }
 

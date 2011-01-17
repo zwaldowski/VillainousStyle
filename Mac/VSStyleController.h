@@ -16,15 +16,14 @@
 //
 
 #import "VillainousStyle.h"
-#import "VSStyleView.h"
 #import "VSStyleLabel.h"
 
 @interface VSStyleController : NSWindowController {
-	IBOutlet VSStyleView *backgroundView;
+	IBOutlet VSView *backgroundView;
 	
-	IBOutlet VSStyleView *styleView1;
-	IBOutlet VSStyleView *styleView2;
-	IBOutlet VSStyleView *styleView3;
+	IBOutlet VSView *styleView1;
+	IBOutlet VSView *styleView2;
+	IBOutlet VSView *styleView3;
 	IBOutlet VSStyleLabel *styleView4;
 	
 	NSArray *styleSheets;

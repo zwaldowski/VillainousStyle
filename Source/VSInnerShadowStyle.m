@@ -17,7 +17,6 @@
 
 #import "VSInnerShadowStyle.h"
 
-
 @implementation VSInnerShadowStyle
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,9 +30,16 @@
 	CGContextClip(ctx);
 	
 	[context.shape addInverseToPath:context.frame];
-//	[[VSColor whiteColor] setFill];
-	CGContextSetShadowWithColor(ctx, CGSizeMake(_offset.width, -_offset.height), _blur,
-								_color.CGColor);
+	
+	float shadowYOffset = -_offset.height;
+#if TARGET_OS_IPHONE
+	NSComparisonResult order = [[UIDevice currentDevice].systemVersion compare: @"3.2" options: NSNumericSearch];
+	if (order == NSOrderedSame || order == NSOrderedDescending) {
+		shadowYOffset = _offset.height;
+	}
+#endif
+	
+	CGContextSetShadowWithColor(ctx, CGSizeMake(_offset.width, shadowYOffset), _blur, _color.CGColor);
 	CGContextEOFillPath(ctx);
 	CGContextRestoreGState(ctx);
 	

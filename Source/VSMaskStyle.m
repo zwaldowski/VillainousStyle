@@ -31,7 +31,6 @@
 	return style;
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject
 
@@ -43,7 +42,7 @@
 }
 
 - (void)dealloc {
-	[_mask release];
+	VS_RELEASE_SAFELY(_mask);
 	[super dealloc];
 }
 

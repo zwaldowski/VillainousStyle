@@ -35,11 +35,7 @@ typedef enum {
 } UIViewContentMode;
 #endif
 
-#if TARGET_OS_IPHONE
-@interface UIImage (ContentMode)
-#else
-@interface NSImage (ContentMode)
-#endif
+@interface VSImage (ContentMode)
 
 /**
  * Draws the image using content mode rules.

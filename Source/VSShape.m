@@ -16,6 +16,7 @@
 //
 
 #import "VSShape.h"
+
 @class VSRectangleShape;
 
 @implementation VSShape

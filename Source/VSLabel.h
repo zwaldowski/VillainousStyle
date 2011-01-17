@@ -1,5 +1,5 @@
 //
-//  VSStyleDelegate.h
+//  VSLabel.h
 //  VillainousStyle
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +16,19 @@
 //
 
 #import "VSGlobal.h"
+#if TARGET_OS_IPHONE
+#import "VSViewiOS.h"
+#else
+#import "VSViewMac.h"
+#endif
 
-@class VSStyle;
-@class VSStyleContext;
+@interface VSLabel : VSView {
+  NSString* _text;
+}
 
-@protocol VSStyleDelegate
+@property (nonatomic, copy)   NSString* text;
 
-@optional
-- (void)drawLayer:(VSStyleContext*)context withStyle:(VSStyle*)style;
-- (NSString*)textForLayerWithStyle:(VSStyle*)style;
-- (VSImage*)imageForLayerWithStyle:(VSStyle*)style;
+- (id)initWithText:(NSString*)aString;
++ (id)labelWithText:(NSString *)aString;
+
 @end

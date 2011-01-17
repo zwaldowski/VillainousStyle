@@ -15,9 +15,9 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSStyle.h"
-#import "VSShape.h"
+
+@class TTShape;
 
 @interface VSShapeStyle : VSStyle {
 	VSShape* _shape;

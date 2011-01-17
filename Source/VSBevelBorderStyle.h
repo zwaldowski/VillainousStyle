@@ -15,7 +15,6 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSStyle.h"
 
 @interface VSBevelBorderStyle : VSStyle {

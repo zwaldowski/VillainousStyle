@@ -115,7 +115,6 @@ static CGFloat kInsetWidth = 5;
 				reset:(BOOL)reset {
 	CGFloat fw = size.width;
 	CGFloat fh = size.height;
-	CGFloat ph;
 	CGFloat pointX = 0;
 	
 	if (reset) {
@@ -123,6 +122,8 @@ static CGFloat kInsetWidth = 5;
 	}
 	
 	if (_pointLocation >= 225 && _pointLocation <= 315) {
+		CGFloat ph;
+
 		if (_pointAngle >= 0 && _pointAngle < 180) {
 			ph = _pointSize.height;
 		} else {
@@ -130,7 +131,7 @@ static CGFloat kInsetWidth = 5;
 		}
 		
 		pointX = fw - (((_pointLocation-225)/90) * fw);
-		CGPathAddArcToPoint(path, nil, fw, fh, floor(fw/2), fh, VSRadius(_radius));
+		CGPathAddArcToPoint(path, nil, fw-VSRadius(_radius), fh, floor(fw/2), fh, VSRadius(_radius));
 		CGPathAddLineToPoint(path, nil, pointX+floor(_pointSize.width/2), fh);
 		CGPathAddLineToPoint(path, nil, pointX, fh-ph);
 		CGPathAddLineToPoint(path, nil, pointX-floor(_pointSize.width/2), fh);

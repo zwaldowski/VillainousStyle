@@ -23,6 +23,13 @@
 
 @synthesize next=_next;
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// NSObject
+
+- (id)init {
+	return [self initWithNext:nil];
+}
+
 - (id)initWithNext:(VSStyle*)next {
 	if (self = [super init]) {
 		_next = [next retain];
@@ -30,12 +37,8 @@
 	return self;
 }
 
-- (id)init {
-	return [self initWithNext:nil];
-}
-
 - (void)dealloc {
-	[_next release];
+	VS_RELEASE_SAFELY(_next);
 	[super dealloc];
 }
 
@@ -119,58 +122,25 @@
 		}
 	}
 
-
 	CGColorSpaceRef space = NULL;
 #if TARGET_OS_IPHONE
-	space = CGColorSpaceCreateDeviceRGB();
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	space = CGBitmapContextGetColorSpace(context);
 #else
 	space = [[NSColorSpace deviceRGBColorSpace] CGColorSpace];
 #endif
 	CGGradientRef gradient = CGGradientCreateWithColorComponents(space, components, locations, count);
 	
+	free(components);
 #if TARGET_OS_IPHONE
 	CGColorSpaceRelease(space);
 #endif
-	free(components);
 	
 	return gradient;
 }
 
 - (CGGradientRef)newGradientWithColors:(VSColor**)colors count:(int)count {
-	CGFloat* components = malloc(sizeof(CGFloat)*4*count);
-	int i = 0;
-	for (i = 0; i < count; ++i) {
-		VSColor* color = colors[count-i-1];
-		size_t n = CGColorGetNumberOfComponents(color.CGColor);
-		const CGFloat* rgba = CGColorGetComponents(color.CGColor);
-		if (n == 2) {
-			components[i*4] = rgba[0];
-			components[i*4+1] = rgba[0];
-			components[i*4+2] = rgba[0];
-			components[i*4+3] = rgba[1];
-		} else if (n == 4) {
-			components[i*4] = rgba[0];
-			components[i*4+1] = rgba[1];
-			components[i*4+2] = rgba[2];
-			components[i*4+3] = rgba[3];
-		}
-	}
-	
-	CGColorSpaceRef space = NULL;
-#if TARGET_OS_IPHONE
-	space = CGColorSpaceCreateDeviceRGB();
-#else
-	space = [[NSColorSpace deviceRGBColorSpace] CGColorSpace];
-#endif
-	
-	CGGradientRef gradient = CGGradientCreateWithColorComponents(space, components, nil, count);
-	
-#if TARGET_OS_IPHONE
-	CGColorSpaceRelease(space);
-#endif
-	free(components);
-	
-	return gradient;
+	return [self newGradientWithColors:colors locations:nil count:count];
 }
 
 - (NSSet *) finalStyles{

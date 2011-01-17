@@ -15,9 +15,9 @@
 //  limitations under the License.
 //
 
-#import "VSStyleView.h"
+#import "VillainousStyle.h"
 
-@interface VSStyleLabel : VSStyleView {
+@interface VSStyleLabel : VSView {
     //STUB add your instance variables here
 	NSString *stringValue;
 }

@@ -18,13 +18,12 @@
 #import "VSSolidBorderStyle.h"
 #import "NSColor+CGColor.h"
 
-
 @implementation VSSolidBorderStyle
 
 @synthesize color = _color, width = _width;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSSolidBorderStyle*)styleWithColor:(VSColor*)color width:(CGFloat)width next:(VSStyle*)next {
 	VSSolidBorderStyle* style = [[[self alloc] initWithNext:next] autorelease];
@@ -45,7 +44,7 @@
 }
 
 - (void)dealloc {
-	[_color release];
+	VS_RELEASE_SAFELY(_color);
 	[super dealloc];
 }
 
@@ -58,7 +57,7 @@
 	
 	CGRect strokeRect = CGRectInset(context.frame, _width/2, _width/2);
 	[context.shape addToPath:strokeRect];
-	
+
 	[_color setStroke];
 	CGContextSetLineWidth(ctx, _width);
 	CGContextStrokePath(ctx);

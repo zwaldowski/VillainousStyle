@@ -20,21 +20,18 @@
 
 @implementation VSRoundedRectangleShape
 
-@synthesize topLeftRadius = _topLeftRadius, topRightRadius = _topRightRadius,
-bottomRightRadius = _bottomRightRadius, bottomLeftRadius = _bottomLeftRadius;
+@synthesize topLeftRadius = _topLeftRadius, topRightRadius = _topRightRadius, bottomRightRadius = _bottomRightRadius, bottomLeftRadius = _bottomLeftRadius;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
 + (VSRoundedRectangleShape*)shapeWithRadius:(CGFloat)radius {
 	VSRoundedRectangleShape* shape = [[[VSRoundedRectangleShape alloc] init] autorelease];
-	shape.topLeftRadius = shape.topRightRadius = shape.bottomRightRadius = shape.bottomLeftRadius
-    = radius;
+	shape.topLeftRadius = shape.topRightRadius = shape.bottomRightRadius = shape.bottomLeftRadius = radius;
 	return shape;
 }
 
-+ (VSRoundedRectangleShape*)shapeWithTopLeft:(CGFloat)topLeft topRight:(CGFloat)topRight
-								 bottomRight:(CGFloat)bottomRight bottomLeft:(CGFloat)bottomLeft {
++ (VSRoundedRectangleShape*)shapeWithTopLeft:(CGFloat)topLeft topRight:(CGFloat)topRight bottomRight:(CGFloat)bottomRight bottomLeft:(CGFloat)bottomLeft {
 	VSRoundedRectangleShape* shape = [[[VSRoundedRectangleShape alloc] init] autorelease];
 	shape.topLeftRadius = topLeft;
 	shape.topRightRadius = topRight;
@@ -72,7 +69,7 @@ bottomRightRadius = _bottomRightRadius, bottomLeftRadius = _bottomLeftRadius;
 	CGRect shadowRect = CGRectMake(-width, -width, fw+width*2, fh+width*2);
 	CGMutablePathRef path = CGPathCreateMutable();
 	CGPathAddRect(path, nil, shadowRect);
-	CGPathCloseSubpath(path);
+	CGPathCloseSubpath(path);	
 	
 	CGPathMoveToPoint(path, nil, fw, floor(fh/2));
 	CGPathAddArcToPoint(path, nil, fw, fh, floor(fw/2), fh, VSRadius(_bottomRightRadius));

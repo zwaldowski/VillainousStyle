@@ -15,14 +15,10 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSStyle.h"
-#import "VSShape.h"
 
-@interface VSContentStyle : VSStyle {
+@interface VSContentStyle : VSStyle;
 
-}
-
-+ (VSContentStyle*)styleWithNext:(VSStyle*)next ;
++ (VSContentStyle*)styleWithNext:(VSStyle*)next;
 
 @end

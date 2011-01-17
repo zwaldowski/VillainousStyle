@@ -20,10 +20,11 @@
 
 @implementation VSRectangleShape
 
+static VSRectangleShape* sharedRectangleShape = nil;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
-static VSRectangleShape* sharedRectangleShape = nil;
 + (VSRectangleShape*)shape {
 	if (!sharedRectangleShape) {
 		sharedRectangleShape = [[VSRectangleShape alloc] init];

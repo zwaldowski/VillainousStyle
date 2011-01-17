@@ -24,8 +24,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
-+ (VSShadowStyle*)styleWithColor:(VSColor*)color blur:(CGFloat)blur offset:(CGSize)offset
-							next:(VSStyle*)next {
++ (VSShadowStyle*)styleWithColor:(VSColor*)color blur:(CGFloat)blur offset:(CGSize)offset next:(VSStyle*)next {
 	VSShadowStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.color = color;
 	style.blur = blur;
@@ -38,15 +37,13 @@
 
 - (id)initWithNext:(VSStyle*)next {  
 	if (self = [super initWithNext:next]) {
-		_color = nil;
-		_blur = 0;
 		_offset = CGSizeZero;
 	}
 	return self;
 }
 
 - (void)dealloc {
-	[_color release];
+	VS_RELEASE_SAFELY(_color);
 	[super dealloc];
 }
 
@@ -77,9 +74,16 @@
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSaveGState(ctx);
 	
+	float shadowYOffset = -_offset.height;
+#if TARGET_OS_IPHONE
+	NSComparisonResult order = [[UIDevice currentDevice].systemVersion compare: @"3.2" options: NSNumericSearch];
+	if (order == NSOrderedSame || order == NSOrderedDescending) {
+		shadowYOffset = _offset.height;
+	}
+#endif
+	
 	[context.shape addToPath:context.frame];
-	CGContextSetShadowWithColor(ctx, CGSizeMake(_offset.width, -_offset.height), _blur,
-								_color.CGColor);
+	CGContextSetShadowWithColor(ctx, CGSizeMake(_offset.width, shadowYOffset), _blur, _color.CGColor);
 	CGContextBeginTransparencyLayer(ctx, nil);
 	[self.next draw:context];
 	CGContextEndTransparencyLayer(ctx);

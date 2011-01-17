@@ -52,7 +52,7 @@
 	return (CGColorRef)[(id)color autorelease];
 }
 
-+ (VSColor *)colorWithCGColor:(CGColorRef)newCGColor {
++ (NSColor *)colorWithCGColor:(CGColorRef)newCGColor {
 	NSColorSpace *space = [[NSColor alloc] initWithCGColorSpace:CGColorGetColorSpace(newCGColor)];
 	const CGFloat *components = CGColorGetComponents(newCGColor);
 	NSInteger number = CGColorGetNumberOfComponents(newCGColor);
@@ -61,15 +61,15 @@
 	return result;
 }
 
-+ (VSColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha {
++ (NSColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha {
 	return [NSColor colorWithDeviceWhite:white alpha:alpha];
 }
 
-+ (VSColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha {
++ (NSColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha {
 	return [NSColor colorWithCalibratedHue:hue saturation:saturation brightness:brightness alpha:alpha];
 }
 
-+ (VSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha {
++ (NSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha {
 	return [NSColor colorWithCalibratedRed:red green:green blue:blue alpha:alpha];
 }
 

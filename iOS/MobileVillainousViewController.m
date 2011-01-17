@@ -7,6 +7,8 @@
 //
 
 #import "MobileVillainousViewController.h"
+#import "iDarkStyleSheet.h"
+#import "iLightStyleSheet.h"
 
 @implementation MobileVillainousViewController
 
@@ -35,11 +37,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	backgroundView.styleName = @"backgroundStyle";
-	topLeftView.styleName = @"upperLeftStyle";
-	topRightView.styleName = @"upperRightStyle";
-	bottomLeftView.styleName = @"lowerLeftStyle";
-	bottomRightView.styleName = @"lowerRightStyle";
-	//bottomRightView.stringValue = @"Hello world!";
+	toggleLabel.styleName = @"toggleLabelStyle";
+	toggleLabel.text = @"Toggle Stylesheet";
+
+	rectStyle.styleName = @"rectStyle";
+	roundRectStyle.styleName = @"roundRectStyle";
+	gradBorderStyle.styleName = @"gradBorderStyle";
+	roundLeftArrowStyle.styleName = @"roundLeftArrowStyle";
+	partRoundRectStyle.styleName = @"partRoundRectStyle";
+	speechRectStyle.styleName = @"speechRectStyle";
+	speechRectAltStyle.styleName = @"speechRectAltStyle";
+	dropShadowStyle.styleName = @"dropShadowStyle";
+	innShadowStyle.styleName = @"innShadowStyle";
+	chiselStyle.styleName = @"chiselStyle";
+	embossStyle.styleName = @"embossStyle";
+	toolbarButtonStyle.styleName = @"toolbarButtonStyle";
+	backButtonStyle.styleName = @"backButtonStyle";
+	backButtonStyle.text = @"Navigation";
+	badgeStyle.styleName = @"badgeStyle";
+	maskedImageStyle.styleName = @"maskedImageStyle";
 }
 
 
@@ -51,6 +67,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+-(IBAction)toggleStyle:(id)sender {
+	//NSLog(@"sender:  %@", sender);
+	if ([(UISwitch *)sender isOn]) {
+		[VSStyleSheet setGlobalStyleSheet:[iLightStyleSheet styleSheet]];
+	} else {
+		[VSStyleSheet setGlobalStyleSheet:[iDarkStyleSheet styleSheet]];
+	}
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

@@ -32,6 +32,20 @@
 	return style;
 }
 
+- (id)initWithNext:(VSStyle *)next {
+	if (self = [super initWithNext:next]) {
+		_name = nil;
+		_style = nil;
+	}
+	return self;
+}
+
+- (void)dealloc {
+	VS_RELEASE_SAFELY(_name);
+	VS_RELEASE_SAFELY(_style);
+	[super dealloc];
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // VSStyle
 
@@ -39,8 +53,8 @@
 	[self.next draw:context];
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// public
 
 - (void)drawPart:(VSStyleContext*)context {
 	[_style draw:context];

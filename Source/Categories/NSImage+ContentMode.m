@@ -17,11 +17,7 @@
 
 #import "NSImage+ContentMode.h"
 
-#if TARGET_OS_IPHONE
-@implementation UIImage (ContentMode)
-#else
-@implementation NSImage (ContentMode)
-#endif
+@implementation VSImage (ContentMode)
 
 - (void)addRoundedRectToPath:(CGContextRef)context rect:(CGRect)rect radius:(float)radius {
 	CGContextBeginPath(context);

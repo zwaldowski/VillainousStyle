@@ -1,6 +1,6 @@
 //
-//  VSStyleView.h
-//  VillainousStyle Mac Demo
+//  VSView.h (Mac)
+//  VillainousStyle
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -15,18 +15,21 @@
 //  limitations under the License.
 //
 
-#import "VillainousStyle.h"
+#import "VSStyleDelegate.h"
+#import "VSGlobal.h"
+#import "NSView+VSStyle.h"
 
-@interface VSStyleView : NSView {
-    //STUB add your instance variables here
-	VSStyle *style;
-	NSString *styleName;
+@class VSStyle;
+
+@interface VSView : NSView <VSStyleDelegate> {
+	VSStyle  *_style;
+	NSString *_styleName;
 }
 
-//STUB add your method declarations here
-@property (nonatomic,retain) VSStyle *style;
+- (void)drawContent:(CGRect)rect;
+
+@property (nonatomic,retain) VSStyle  *style;
 @property (nonatomic,copy)   NSString *styleName;
 
-- (void)addObservers;
 
 @end

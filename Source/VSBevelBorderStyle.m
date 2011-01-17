@@ -23,7 +23,7 @@
 @synthesize highlight = _highlight, shadow = _shadow, width = _width, lightSource = _lightSource;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSBevelBorderStyle*)styleWithColor:(VSColor*)color width:(CGFloat)width next:(VSStyle*)next {
 	return [self styleWithHighlight:[color highlight] shadow:[color shadow] width:width
@@ -54,8 +54,8 @@
 }
 
 - (void)dealloc {
-	[_highlight release];
-	[_shadow release];
+	VS_RELEASE_SAFELY(_highlight);
+	VS_RELEASE_SAFELY(_shadow);
 	[super dealloc];
 }
 

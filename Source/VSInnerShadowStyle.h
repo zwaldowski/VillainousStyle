@@ -15,13 +15,8 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSShadowStyle.h"
 
-@interface VSInnerShadowStyle : VSShadowStyle {
-    //STUB add your instance variables here
-}
-
-//STUB add your method declarations here
+@interface VSInnerShadowStyle : VSShadowStyle;
 
 @end

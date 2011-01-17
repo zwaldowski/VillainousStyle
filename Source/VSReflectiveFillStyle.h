@@ -15,15 +15,17 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSStyle.h"
 
 @interface VSReflectiveFillStyle : VSStyle {
 	VSColor* _color;
+	BOOL	 _withBottomHighlight;
 }
 
-@property(nonatomic,retain) VSColor* color;
+@property (nonatomic,retain) VSColor* color;
+@property (nonatomic,assign) BOOL	  withBottomHighlight;
 
 + (VSReflectiveFillStyle*)styleWithColor:(VSColor*)color next:(VSStyle*)next;
++ (VSReflectiveFillStyle*)styleWithColor:(VSColor*)color withBottomHighlight:(BOOL)withBottomHighlight next:(VSStyle*)next;
 
 @end

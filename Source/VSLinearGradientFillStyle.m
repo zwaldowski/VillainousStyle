@@ -25,8 +25,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
-+ (VSLinearGradientFillStyle*)styleWithColor1:(VSColor*)color1 color2:(VSColor*)color2
-										 next:(VSStyle*)next {
++ (VSLinearGradientFillStyle*)styleWithColor1:(VSColor*)color1 color2:(VSColor*)color2 next:(VSStyle*)next {
 	VSLinearGradientFillStyle* style = [[[self alloc] initWithNext:next] autorelease];
 	style.color1 = color1;
 	style.color2 = color2;
@@ -45,8 +44,8 @@
 }
 
 - (void)dealloc {
-	[_color1 release];
-	[_color2 release];
+	VS_RELEASE_SAFELY(_color1);
+	VS_RELEASE_SAFELY(_color2);
 	[super dealloc];
 }
 
@@ -63,8 +62,7 @@
 	
 	VSColor* colors[] = {_color1, _color2};
 	CGGradientRef gradient = [self newGradientWithColors:colors count:2];
-	CGContextDrawLinearGradient(ctx, gradient, CGPointMake(rect.origin.x, rect.origin.y),
-								CGPointMake(rect.origin.x, rect.origin.y+rect.size.height), kCGGradientDrawsAfterEndLocation);
+	CGContextDrawLinearGradient(ctx, gradient, CGPointMake(rect.origin.x, rect.origin.y), CGPointMake(rect.origin.x, rect.origin.y+rect.size.height), kCGGradientDrawsAfterEndLocation);
 	CGGradientRelease(gradient);
 	
 	CGContextRestoreGState(ctx);

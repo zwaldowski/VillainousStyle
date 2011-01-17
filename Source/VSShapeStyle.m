@@ -23,7 +23,7 @@
 @synthesize shape = _shape;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSShapeStyle*)styleWithShape:(VSShape*)shape next:(VSStyle*)next {
 	VSShapeStyle* style = [[[self alloc] initWithNext:next] autorelease];
@@ -42,7 +42,7 @@
 }
 
 - (void)dealloc {
-	[_shape release];
+	VS_RELEASE_SAFELY(_shape);
 	[super dealloc];
 }
 
@@ -53,18 +53,7 @@
 	UIEdgeInsets shapeInsets = [_shape insetsForSize:context.frame.size];
 	context.contentFrame = VSRectInset(context.contentFrame, shapeInsets);
 	context.shape = _shape;
-	
-	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	CGContextSaveGState(ctx);
-	
-	CGContextBeginPath(ctx);
-	
-	[_shape addToPath:context.contentFrame];
-	CGContextClip(ctx);
-	
 	[self.next draw:context];
-	
-	CGContextRestoreGState(ctx);
 }
 
 - (UIEdgeInsets)addToInsets:(UIEdgeInsets)insets forSize:(CGSize)size {

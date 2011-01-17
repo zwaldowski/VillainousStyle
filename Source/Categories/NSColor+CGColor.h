@@ -22,10 +22,10 @@
 @interface NSColor (CGColorRef)
 
 @property (readonly) CGColorRef CGColor;
-+ (VSColor *)colorWithCGColor:(CGColorRef)aColor;
-+ (VSColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha;
++ (NSColor *)colorWithCGColor:(CGColorRef)aColor;
++ (NSColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha;
 + (NSColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
-+ (VSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
++ (NSColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 
 @end
 #endif

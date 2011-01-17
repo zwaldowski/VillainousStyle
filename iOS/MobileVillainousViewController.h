@@ -7,15 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VSStyleView.h"
+#import "VillainousStyle.h"
 
 @interface MobileVillainousViewController : UIViewController {
-	IBOutlet VSStyleView *backgroundView;
-	IBOutlet VSStyleView *topLeftView;
-	IBOutlet VSStyleView *topRightView;
-	IBOutlet VSStyleView *bottomLeftView;
-	IBOutlet VSStyleView *bottomRightView;
+	IBOutlet VSView *backgroundView;
+	IBOutlet VSLabel *toggleLabel;
+	IBOutlet VSView *rectStyle;
+	IBOutlet VSView *roundRectStyle;
+	IBOutlet VSView *gradBorderStyle;
+	IBOutlet VSView *roundLeftArrowStyle;
+	IBOutlet VSView *partRoundRectStyle;
+	IBOutlet VSView *speechRectStyle;
+	IBOutlet VSView *speechRectAltStyle;
+	IBOutlet VSView *dropShadowStyle;
+	IBOutlet VSView *innShadowStyle;
+	IBOutlet VSView *chiselStyle;
+	IBOutlet VSView *embossStyle;
+	IBOutlet VSView *toolbarButtonStyle;
+	IBOutlet VSLabel *backButtonStyle;
+	IBOutlet VSView *badgeStyle;
+	IBOutlet VSView *maskedImageStyle;
 }
+
+-(IBAction)toggleStyle:(id)sender;
 
 @end
 

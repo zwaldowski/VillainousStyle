@@ -27,6 +27,8 @@
 #import "VSLinearGradientFillStyle.h"
 #import "VSReflectiveFillStyle.h"
 
+#import "VSHighlightBorderStyle.h"
+#import "VSLinearGradientBorderStyle.h"
 #import "VSSolidBorderStyle.h"
 #import "VSBevelBorderStyle.h"
 #import "VSFourBorderStyle.h"

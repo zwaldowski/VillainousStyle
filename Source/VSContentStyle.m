@@ -23,12 +23,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
-+ (VSContentStyle*)styleWithNext:(VSStyle*)next {
++ (VSContentStyle *)styleWithNext:(VSStyle*)next {
 	return [[[self alloc] initWithNext:next] autorelease];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// TTStyle
+// VSStyle
 
 - (void)draw:(VSStyleContext*)context {
 	if ([context.delegate respondsToSelector:@selector(drawLayer:withStyle:)]) {

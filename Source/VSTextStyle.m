@@ -44,8 +44,7 @@
 	return style;
 }
 
-+ (VSTextStyle *)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
-                textAlignment:(UITextAlignment)aTextAlignment next:(VSStyle*)nextStyle {
++ (VSTextStyle *)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor textAlignment:(UITextAlignment)aTextAlignment next:(VSStyle*)nextStyle {
 	VSTextStyle* style = [[[self alloc] initWithNext:nextStyle] autorelease];
 	style.font = aFont;
 	style.color = aColor;
@@ -53,9 +52,7 @@
 	return style;
 }
 
-+ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
-				  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
-						 next:(VSStyle*)nextStyle {
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset next:(VSStyle*)nextStyle {
 	VSTextStyle* style = [[[self alloc] initWithNext:nextStyle] autorelease];
 	style.font = aFont;
 	style.color = aColor;
@@ -64,10 +61,7 @@
 	return style;
 }
 
-+ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
-			  minimumFontSize:(CGFloat)aMinimumFontSize
-				  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
-						 next:(VSStyle*)nextStyle {
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor minimumFontSize:(CGFloat)aMinimumFontSize shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset next:(VSStyle*)nextStyle {
 	VSTextStyle* style = [[[self alloc] initWithNext:nextStyle] autorelease];
 	style.font = aFont;
 	style.color = aColor;
@@ -77,13 +71,7 @@
 	return style;
 }
 
-+ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor
-              minimumFontSize:(CGFloat)aMinimumFontSize
-                  shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset
-                textAlignment:(UITextAlignment)aTextAlignment
-            verticalAlignment:(UIControlContentVerticalAlignment)aVerticalAlignment
-                lineBreakMode:(UILineBreakMode)aLineBreakMode numberOfLines:(NSInteger)aNumberOfLines
-                         next:(VSStyle*)nextStyle {
++ (VSTextStyle*)styleWithFont:(VSFont*)aFont color:(VSColor*)aColor minimumFontSize:(CGFloat)aMinimumFontSize shadowColor:(VSColor*)aShadowColor shadowOffset:(CGSize)aShadowOffset textAlignment:(UITextAlignment)aTextAlignment verticalAlignment:(UIControlContentVerticalAlignment)aVerticalAlignment lineBreakMode:(UILineBreakMode)aLineBreakMode numberOfLines:(NSInteger)aNumberOfLines next:(VSStyle*)nextStyle {
 	VSTextStyle* style = [[[self alloc] initWithNext:nextStyle] autorelease];
 	style.font = aFont;
 	style.color = aColor;
@@ -95,6 +83,33 @@
 	style.lineBreakMode = aLineBreakMode;
 	style.numberOfLines = aNumberOfLines;
 	return style;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// NSObject
+
+- (id)initWithNext:(VSStyle*)next {  
+	if (self = [super initWithNext:next]) {
+		_font = nil;
+		_color = nil;
+		_shadowColor = nil;
+		_shadowOffset = CGSizeZero;
+#if TARGET_OS_MAC
+		_minimumFontSize = 0;
+#endif
+		_numberOfLines = 1;
+		_textAlignment = UITextAlignmentCenter;
+		_verticalAlignment = UIControlContentVerticalAlignmentCenter;
+		_lineBreakMode = UILineBreakModeTailTruncation;
+	}
+	return self;
+}
+
+- (void)dealloc {
+	VS_RELEASE_SAFELY(_font);
+	VS_RELEASE_SAFELY(_color);
+	VS_RELEASE_SAFELY(_shadowColor);
+	[super dealloc];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,8 +151,7 @@
 		return [text sizeWithFont:aFont];
 	} else {
 		CGSize maxSize = CGSizeMake(size.width, CGFLOAT_MAX);
-		CGSize textSize = [text sizeWithFont:aFont constrainedToSize:maxSize
-							   lineBreakMode:_lineBreakMode];
+		CGSize textSize = [text sizeWithFont:aFont constrainedToSize:maxSize lineBreakMode:_lineBreakMode];
 		if (_numberOfLines) {
 			CGFloat lineHeight = (aFont.ascender - aFont.descender) + 1;
 			CGFloat maxHeight = lineHeight * _numberOfLines;
@@ -224,8 +238,7 @@
 						baselineAdjustment:UIBaselineAdjustmentAlignCenters];
 	} else {
 		titleRect = CGRectOffset(titleRect, rect.origin.x, rect.origin.y);
-		rect.size = [text drawInRect:titleRect withFont:font lineBreakMode:_lineBreakMode
-						   alignment:_textAlignment];
+		rect.size = [text drawInRect:titleRect withFont:font lineBreakMode:_lineBreakMode alignment:_textAlignment];
 	}	
 #else
 	if (_numberOfLines == 1) {
@@ -238,30 +251,6 @@
 	context.contentFrame = titleRect;
 	
 	CGContextRestoreGState(ctx);
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
-
-- (id)initWithNext:(VSStyle*)next {  
-	if (self = [super initWithNext:next]) {
-		_shadowOffset = CGSizeZero;
-#if TARGET_OS_MAC
-		_minimumFontSize = 0;
-#endif
-		_numberOfLines = 1;
-		_textAlignment = UITextAlignmentCenter;
-		_verticalAlignment = UIControlContentVerticalAlignmentCenter;
-		_lineBreakMode = UILineBreakModeTailTruncation;
-	}
-	return self;
-}
-
-- (void)dealloc {
-	[_font release];
-	[_color release];
-	[_shadowColor release];
-	[super dealloc];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

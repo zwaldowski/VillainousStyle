@@ -1,5 +1,5 @@
 //
-//  VSStyleDelegate.h
+//  VSView.h
 //  VillainousStyle
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,15 +15,20 @@
 //  limitations under the License.
 //
 
+#import "VSStyleDelegate.h"
 #import "VSGlobal.h"
 
 @class VSStyle;
-@class VSStyleContext;
 
-@protocol VSStyleDelegate
+@interface VSView : UIView <VSStyleDelegate> {
+	VSStyle  *_style;
+	NSString *_styleName;
+}
 
-@optional
-- (void)drawLayer:(VSStyleContext*)context withStyle:(VSStyle*)style;
-- (NSString*)textForLayerWithStyle:(VSStyle*)style;
-- (VSImage*)imageForLayerWithStyle:(VSStyle*)style;
+- (void)drawContent:(CGRect)rect;
+
+@property (nonatomic,retain) VSStyle  *style;
+@property (nonatomic,copy)   NSString *styleName;
+
+
 @end

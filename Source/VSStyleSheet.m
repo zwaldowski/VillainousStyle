@@ -22,14 +22,9 @@
 + (NSArray*)_subclassesOfClass:(Class)superclass fromCArray:(Class[])classes withCount:(int)count;
 @end
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// global
-
 static NSArray *gAllStyleSheets;
 static VSStyleSheet* gStyleSheet = nil;
 const NSString *VSStyleSheetChangedNotification = @"VSStyleSheetChangedNotification";
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation VSStyleSheet
 
@@ -57,14 +52,11 @@ const NSString *VSStyleSheetChangedNotification = @"VSStyleSheetChangedNotificat
 
 
 + (VSStyleSheet*)globalStyleSheet {
-/*
- TODO Implement a default style sheet for Aqua
- Perhaps make alternatives for other common UI styles
- 
+	/*
 	if (!gStyleSheet) {
 		gStyleSheet = [[VSDefaultStyleSheet alloc] init];
 	}
- */
+	 */
 	if (!gStyleSheet){
 		gStyleSheet = [[[self allStyleSheets] lastObject] retain];
 	}
@@ -96,12 +88,12 @@ const NSString *VSStyleSheetChangedNotification = @"VSStyleSheetChangedNotificat
 #if TARGET_OS_IPHONE
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
 #endif
-	[_styles release]; _styles = nil;
+	VS_RELEASE_SAFELY(_styles);
 	
 	[super dealloc];
 }
 
-+ (id) styleSheet{
++ (id)styleSheet{
 	return [[[self alloc] init] autorelease];
 }
 
@@ -136,7 +128,6 @@ const NSString *VSStyleSheetChangedNotification = @"VSStyleSheetChangedNotificat
 }
 
 #else
-
 - (VSStyle*)styleWithSelector:(NSString*)selector {
 	if(!selector) return nil;
 	
@@ -155,6 +146,7 @@ const NSString *VSStyleSheetChangedNotification = @"VSStyleSheetChangedNotificat
 	}
 	return style;
 }
+
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

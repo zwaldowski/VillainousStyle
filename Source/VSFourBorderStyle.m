@@ -23,7 +23,7 @@
 @synthesize top = _top, right = _right, bottom = _bottom, left = _left, width = _width;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSFourBorderStyle*)styleWithTop:(VSColor*)top right:(VSColor*)right bottom:(VSColor*)bottom
 							  left:(VSColor*)left width:(CGFloat)width next:(VSStyle*)next {
@@ -51,10 +51,10 @@
 }
 
 - (void)dealloc {
-	[_top release];
-	[_right release];
-	[_bottom release];
-	[_left release];
+	VS_RELEASE_SAFELY(_top);
+	VS_RELEASE_SAFELY(_right);
+	VS_RELEASE_SAFELY(_bottom);
+	VS_RELEASE_SAFELY(_left);
 	[super dealloc];
 }
 

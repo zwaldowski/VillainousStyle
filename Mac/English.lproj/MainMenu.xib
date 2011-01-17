@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="535"/>
 			<integer value="29"/>
+			<integer value="535"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -440,26 +440,26 @@
 									<int key="NSvFlags">310</int>
 									<string key="NSFrame">{{20, 20}, {210, 150}}</string>
 									<reference key="NSSuperview" ref="903370707"/>
-									<string key="NSClassName">VSStyleView</string>
+									<string key="NSClassName">VSView</string>
 								</object>
 								<object class="NSCustomView" id="650904241">
 									<reference key="NSNextResponder" ref="903370707"/>
 									<int key="NSvFlags">283</int>
 									<string key="NSFrame">{{250, 190}, {210, 150}}</string>
 									<reference key="NSSuperview" ref="903370707"/>
-									<string key="NSClassName">VSStyleView</string>
+									<string key="NSClassName">VSView</string>
 								</object>
 								<object class="NSCustomView" id="902153058">
 									<reference key="NSNextResponder" ref="903370707"/>
 									<int key="NSvFlags">286</int>
 									<string key="NSFrame">{{20, 190}, {210, 150}}</string>
 									<reference key="NSSuperview" ref="903370707"/>
-									<string key="NSClassName">VSStyleView</string>
+									<string key="NSClassName">VSView</string>
 								</object>
 							</object>
 							<string key="NSFrame">{{0, 40}, {480, 360}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<string key="NSClassName">VSStyleView</string>
+							<string key="NSClassName">VSView</string>
 						</object>
 						<object class="NSTextField" id="697315182">
 							<reference key="NSNextResponder" ref="439893737"/>
@@ -1424,9 +1424,9 @@
 					<string>{{475, 832}, {234, 43}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{824, 144}, {480, 400}}</string>
+					<string>{{413, 162}, {480, 400}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{824, 144}, {480, 400}}</string>
+					<string>{{413, 162}, {480, 400}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="NO"/>
@@ -1544,10 +1544,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>VSStyleView</string>
-							<string>VSStyleView</string>
-							<string>VSStyleView</string>
-							<string>VSStyleView</string>
+							<string>VSView</string>
+							<string>VSView</string>
+							<string>VSView</string>
+							<string>VSView</string>
 							<string>VSStyleLabel</string>
 						</object>
 					</object>
@@ -1565,19 +1565,19 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">backgroundView</string>
-								<string key="candidateClassName">VSStyleView</string>
+								<string key="candidateClassName">VSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">styleView1</string>
-								<string key="candidateClassName">VSStyleView</string>
+								<string key="candidateClassName">VSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">styleView2</string>
-								<string key="candidateClassName">VSStyleView</string>
+								<string key="candidateClassName">VSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">styleView3</string>
-								<string key="candidateClassName">VSStyleView</string>
+								<string key="candidateClassName">VSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">styleView4</string>
@@ -1592,18 +1592,18 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">VSStyleLabel</string>
-					<string key="superclassName">VSStyleView</string>
+					<string key="superclassName">VSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Mac/VSStyleLabel.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">VSStyleView</string>
+					<string key="className">VSView</string>
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Mac/VSStyleView.h</string>
+						<string key="minorKey">Source/VSViewMac.h</string>
 					</object>
 				</object>
 			</object>

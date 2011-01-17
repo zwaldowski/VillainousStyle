@@ -15,7 +15,6 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
 #import "VSStyle.h"
 #import "NSImage+ContentMode.h"
 

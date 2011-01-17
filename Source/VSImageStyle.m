@@ -17,7 +17,6 @@
 
 #import "VSImageStyle.h"
 
-
 @implementation VSImageStyle
 
 @synthesize imageURL = _imageURL, image = _image, defaultImage = _defaultImage, contentMode = _contentMode, size = _size;
@@ -70,17 +69,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// private
-
-- (VSImage*)imageForContext:(VSStyleContext*)context {
-	VSImage* image = self.image;
-	if (!image && [context.delegate respondsToSelector:@selector(imageForLayerWithStyle:)]) {
-		image = [context.delegate imageForLayerWithStyle:self];
-	}
-	return image;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject
 
 - (id)initWithNext:(VSStyle*)next {  
@@ -95,10 +83,35 @@
 }
 
 - (void)dealloc {
-	[_imageURL release];
-	[_image release];
-	[_defaultImage release];
+	VS_RELEASE_SAFELY(_imageURL);
+	VS_RELEASE_SAFELY(_image);
+	VS_RELEASE_SAFELY(_defaultImage);
 	[super dealloc];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// private
+
+- (VSImage*)imageForContext:(VSStyleContext*)context {
+	VSImage* image = self.image;
+	if (!image && [context.delegate respondsToSelector:@selector(imageForLayerWithStyle:)]) {
+		image = [context.delegate imageForLayerWithStyle:self];
+	}
+	return image;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// public
+
+- (VSImage*)image {
+	if (!_image && _imageURL) {
+		NSURL *url = (NSURL *)_imageURL;
+		if([url isKindOfClass:[NSString class]]){
+			url = [NSURL URLWithString:(NSString *)url];
+		}
+		_image = [[[VSImage alloc] initWithContentsOfURL:url] retain];
+	}
+	return _image;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -132,20 +145,6 @@
 	} else {
 		return size;
 	}
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// public
-
-- (VSImage*)image {
-	if (!_image && _imageURL) {
-		NSURL *url = (NSURL *)_imageURL;
-		if([url isKindOfClass:[NSString class]]){
-			url = [NSURL URLWithString:(NSString *)url];
-		}
-		_image = [[[VSImage alloc] initWithContentsOfURL:url] retain];
-	}
-	return _image;
 }
 
 @end

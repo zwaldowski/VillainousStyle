@@ -8,7 +8,7 @@
 
 #import "MobileVillainousAppDelegate.h"
 #import "MobileVillainousViewController.h"
-#import "LightStyleSheet.h"
+#import "iDarkStyleSheet.h"
 
 @implementation MobileVillainousAppDelegate
 
@@ -20,7 +20,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	[VSStyleSheet setGlobalStyleSheet:[LightStyleSheet styleSheet]];
+	[VSStyleSheet setGlobalStyleSheet:[iDarkStyleSheet styleSheet]];
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.

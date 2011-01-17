@@ -20,15 +20,15 @@
 #import "NSColor+CGColor.h"
 
 @interface VSShadowStyle : VSStyle {
-	VSColor* _color;
-	CGFloat _blur;
-	CGSize _offset;
+	VSColor*    _color;
+	CGFloat     _blur;
+	CGSize      _offset;
 }
 
 @property(nonatomic,retain) VSColor* color;
-@property(nonatomic) CGFloat blur;
-@property(nonatomic) CGSize offset;
+@property(nonatomic) CGFloat         blur;
+@property(nonatomic) CGSize          offset;
 
-+ (VSShadowStyle*)styleWithColor:(VSColor*)color blur:(CGFloat)blur offset:(CGSize)offset
-							next:(VSStyle*)next;
++ (VSShadowStyle*)styleWithColor:(VSColor*)color blur:(CGFloat)blur offset:(CGSize)offset next:(VSStyle*)next;
+
 @end

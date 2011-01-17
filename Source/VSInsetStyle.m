@@ -17,13 +17,12 @@
 
 #import "VSInsetStyle.h"
 
-
 @implementation VSInsetStyle
 
 @synthesize inset = _inset;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// NSObject
+// class public
 
 + (VSInsetStyle*)styleWithInset:(UIEdgeInsets)inset next:(VSStyle*)next {
 	VSInsetStyle* style = [[[self alloc] initWithNext:next] autorelease];

@@ -1,5 +1,5 @@
 //
-//  VSStyleDelegate.h
+//  VSHighlightBorderStyle.h
 //  VillainousStyle
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,15 +15,18 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
+#import "VSStyle.h"
 
-@class VSStyle;
-@class VSStyleContext;
+@interface VSHighlightBorderStyle : VSStyle {
+  VSColor*  _color;
+  VSColor*  _highlightColor;
+  CGFloat   _width;
+}
 
-@protocol VSStyleDelegate
+@property (nonatomic, retain) VSColor*  color;
+@property (nonatomic, retain) VSColor*  highlightColor;
+@property (nonatomic)         CGFloat   width;
 
-@optional
-- (void)drawLayer:(VSStyleContext*)context withStyle:(VSStyle*)style;
-- (NSString*)textForLayerWithStyle:(VSStyle*)style;
-- (VSImage*)imageForLayerWithStyle:(VSStyle*)style;
++ (VSHighlightBorderStyle*)styleWithColor:(VSColor*)color highlightColor:(VSColor*)highlightColor width:(CGFloat)width next:(VSStyle*)next;
+
 @end

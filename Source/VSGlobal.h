@@ -35,19 +35,28 @@ static inline UIEdgeInsets UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat b
 #pragma mark Color/Image/Font compatibility
 
 #if TARGET_OS_IPHONE
-@compatibility_alias VSColor UIColor;
-@compatibility_alias VSImage UIImage;
-@compatibility_alias VSFont  UIFont;
-#else
-#define UIGraphicsGetCurrentContext() ((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort])
-@compatibility_alias VSColor NSColor;
-@compatibility_alias VSImage NSImage;
-@compatibility_alias VSFont  NSFont;
-#endif
+#define VSColorRGB(__r, __g, __b)        ([UIColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:1.0 ])
+#define VSColorRGBA(__r, __g, __b, __a) ([UIColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:(__a)])
+#define VSColorHSV(__h, __s, __v)		[UIColor colorWithHue:(__h) saturation:(__s) value:(__v) alpha:1.0]
 
-#define VSColorRGB(__r, __g, __b)		[VSColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:1.0 ]
-#define VSColorRGBA(__r, __g, __b, __a)	[VSColor colorWithRed:(__r) green:(__g) blue:(__b) alpha:(__a)]
-#define VSColorHSV(__h, __s, __v)		[VSColor colorWithHue:(__h) saturation:(__s) value:(__v) alpha:1.0]
+@compatibility_alias VSColor       UIColor;
+@compatibility_alias VSImage       UIImage;
+@compatibility_alias VSFont        UIFont;
+@compatibility_alias VSIView       UIView;
+@compatibility_alias VSIScrollView UIScrollView;
+@compatibility_alias VSIControl    UIControl;
+#else
+#define VSColorRGB(__r, __g, __b)        ([NSColor colorWithCalibratedRed:(__r) green:(__g) blue:(__b) alpha:1.0 ])
+#define VSColorRGBA(__r, __g, __b, __a) ([NSColor colorWithCalibratedRed:(__r) green:(__g) blue:(__b) alpha:(__a)])
+#define VSColorHSV(__h, __s, __v)		[NSColor colorWithDeviceHue:(__h) saturation:(__s) value:(__v) alpha:1.0]
+#define UIGraphicsGetCurrentContext() ((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort])
+@compatibility_alias VSColor       NSColor;
+@compatibility_alias VSImage       NSImage;
+@compatibility_alias VSFont        NSFont;
+@compatibility_alias VSIView       NSView;
+@compatibility_alias VSIScrollView NSScrollView;
+@compatibility_alias VSIControl    NSControl;
+#endif
 
 #define ZEROLIMIT(_VALUE) (_VALUE < 0 ? 0 : (_VALUE > 1 ? 1 : _VALUE))
 
@@ -59,6 +68,9 @@ static inline UIEdgeInsets UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat b
 	
 #define VS_ROUNDED -1
 #define VSRadius(_RADIUS) (_RADIUS == VS_ROUNDED ? round(fh/2) : _RADIUS)
+
+#define VSSTYLEVAR(_VARNAME) [(id)[VSStyleSheet globalStyleSheet] _VARNAME]
+
 
 typedef enum {
 	VSPositionStatic,
