@@ -73,7 +73,6 @@
 	CGContextSaveGState(ctx);
 
 	CGRect strokeRect = CGRectInset(context.frame, _width/2, _width/2);
-	UIEdgeInsets shapeInsets = [context.shape insetsForSize:context.frame.size];
 	[context.shape addToPath:strokeRect];
 	CGContextSetLineWidth(ctx, _width);
 	CGContextReplacePathWithStrokedPath(ctx);

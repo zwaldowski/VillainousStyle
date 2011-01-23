@@ -32,9 +32,10 @@
 #import "NSImage+ContentMode.h"
 
 #if TARGET_OS_IPHONE
-#import "VSViewiOS.h"
+#import "VSView_iOS.h"
+#import "VSButton_iOS.h"
 #else
-#import "VSViewMac.h"
+#import "VSView_Mac.h"
+#import "VSButton_Mac.h"
 #endif
 #import "VSLabel.h"
-#import "VSButton.h"

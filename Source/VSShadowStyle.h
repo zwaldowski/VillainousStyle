@@ -17,7 +17,6 @@
 
 #import "VSGlobal.h"
 #import "VSStyle.h"
-#import "NSColor+CGColor.h"
 
 @interface VSShadowStyle : VSStyle {
 	VSColor*    _color;

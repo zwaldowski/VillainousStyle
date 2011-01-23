@@ -27,6 +27,8 @@ For use in Mac apps, build the framework using "VillainousStyle Mac.xcodeproj".
 
 For use in iOS, drag "VillainousStyle iOS.xcodeproj" into your Xcode project, enter the target settings for your application, add libVillainousStyle.a as a dependency, and then drag libVillainousStyle.a into your target's "Link Binary with Libraries."
 
+For both platforms, add "-ObjC -all_load" to your project's "Other Linker Flags".
+
 You may also build and run the test applications from their appropriate Xcode projects.
 
 Stylesheets
@@ -49,6 +51,8 @@ VillainousStyle can draw both styles and shapes.  Styles affect drawing and posi
  * VSSolidBorderStyle - Draws a border around the current shape with a solid color
  * VSBevelBorderStyle - Draws a beveled edge border for a 3D effect around the current shape
  * VSFourBorderStyle - Draws a border around the current shape with four colors, one for each edge
+ * VSHighlightBorderStyle - Draws a highlighted border around the current shape
+ * VSLinearGradientBorderStyle - Draws a border around the current shape using a linear cradient
 * Shadows
  * VSShadowStyle - Draws a shadow behind content with a given color, blur, and offset
  * VSInnerShadowStyle - Draws a shadow inside the content with a given color, blur, and offset
@@ -67,6 +71,9 @@ VillainousStyle can draw both styles and shapes.  Styles affect drawing and posi
  * VSRoundedRectangleShape
  * VSRoundedLeftArrowShape - a rounded rectangle with a left-facing arrow
  * VSRoundedRightArrowShape - a rounded rectangle with a right-facing arrow
+* Extensions
+ * UIColor/NSColor, UIImage/NSImage, UIFont/NSFont abstraction
+ * Convenience views w/ UIView/NSView abstraction
 
 Screenshots
 ===========

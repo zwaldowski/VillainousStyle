@@ -16,6 +16,7 @@
 //
 
 #import "VSInnerShadowStyle.h"
+#import "NSColor+CGColor.h"
 
 @implementation VSInnerShadowStyle
 

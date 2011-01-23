@@ -44,10 +44,9 @@
 
 
 -(VSStyle *)gradBorderStyle {
-	/*return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:10] next:
+	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:10] next:
 			[VSSolidFillStyle styleWithColor:[VSColor whiteColor] next:
-			 [VSLinearGradientBorderStyle styleWithColor1:[VSColor blackColor]
-												   color2:VSColorRGB(0.85, 0.87, 0.91) width:2 next:nil]]];*/
+			 [VSLinearGradientBorderStyle styleWithColor1:[VSColor blackColor] color2:VSColorRGB(0.85, 0.87, 0.91) width:2 next:nil]]];
 	return nil;
 }
 
@@ -120,15 +119,13 @@
 
 
 -(VSStyle *)toolbarButtonStyle {
-	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:4.5] next:
-    [VSShadowStyle styleWithColor:VSColorRGBA(1, 1, 1, 0.36) blur:1 offset:CGSizeMake(0, 0.5) next:
-	 [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
-	  [VSBevelBorderStyle styleWithHighlight:[kDarkBlueColor shadow]
-									  shadow:[kDarkBlueColor multiplyHue:1 saturation:0.5 value:0.5]
-									   width:1 lightSource:270 next:
-	   [VSInsetStyle styleWithInset:UIEdgeInsetsMake(0, -1, 0, -1) next:
-		[VSBevelBorderStyle styleWithHighlight:nil shadow:VSColorRGBA(0,0,0, 0.15)
-										 width:1 lightSource:270 next:nil]]]]]];
+	return	[VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:5] next:
+			 [VSShadowStyle styleWithColor:VSColorRGBA(1, 1, 1, 0.36) blur:1 offset:CGSizeMake(0, 0.5) next:
+			  [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
+			   [VSInnerShadowStyle styleWithColor:VSColorRGBA(0, 0, 0, 0.7) blur:1 offset:CGSizeMake(0, 1) next:
+				[VSLinearGradientBorderStyle styleWithColor1:VSColorRGBA(0.22, 0.31, 0.46, 0.0) location1:0.5 color2:VSColorRGB(0.22, 0.31, 0.46) location2:1 width:1 next:
+			     [VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:[VSColor whiteColor] minimumFontSize:12 shadowColor:VSColorRGBA(0, 0, 0, 0.45) shadowOffset:CGSizeMake(0, 1) textAlignment:UITextAlignmentCenter verticalAlignment:UIControlContentVerticalAlignmentCenter lineBreakMode:UILineBreakModeTailTruncation numberOfLines:1 next:nil]]]]]];
+	
 }
 
 
@@ -138,7 +135,7 @@
 			  [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
 			   [VSInnerShadowStyle styleWithColor:VSColorRGBA(0, 0, 0, 0.7) blur:1 offset:CGSizeMake(0, 1) next:
 				[VSLinearGradientBorderStyle styleWithColor1:VSColorRGBA(0.22, 0.31, 0.46, 0.0) location1:0.5 color2:VSColorRGB(0.22, 0.31, 0.46) location2:1 width:1 next:
-			     [VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:12] color:[VSColor whiteColor] minimumFontSize:12 shadowColor:VSColorRGBA(0, 0, 0, 0.45) shadowOffset:CGSizeMake(0, 1) textAlignment:UITextAlignmentCenter verticalAlignment:UIControlContentVerticalAlignmentCenter lineBreakMode:UILineBreakModeTailTruncation numberOfLines:1 next:nil]]]]]];
+			     [VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:[VSColor whiteColor] minimumFontSize:12 shadowColor:VSColorRGBA(0, 0, 0, 0.45) shadowOffset:CGSizeMake(0, 1) textAlignment:UITextAlignmentCenter verticalAlignment:UIControlContentVerticalAlignmentCenter lineBreakMode:UILineBreakModeTailTruncation numberOfLines:1 next:nil]]]]]];
 }
 
 -(VSStyle *)badgeStyle {

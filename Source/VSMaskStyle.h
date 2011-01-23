@@ -17,7 +17,6 @@
 
 #import "VSGlobal.h"
 #import "VSStyle.h"
-#import "NSImage+CGImage.h"
 
 @interface VSMaskStyle : VSStyle {
 	VSImage* _mask;

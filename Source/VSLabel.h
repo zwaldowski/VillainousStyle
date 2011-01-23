@@ -16,10 +16,11 @@
 //
 
 #import "VSGlobal.h"
+
 #if TARGET_OS_IPHONE
-#import "VSViewiOS.h"
+#import "VSView_iOS.h"
 #else
-#import "VSViewMac.h"
+#import "VSView_Mac.h"
 #endif
 
 @interface VSLabel : VSView {

@@ -14,84 +14,149 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 //
-/*
-#import "VSButton.h"
 
-static const CGFloat kHPadding = 8;
-static const CGFloat kVPadding = 7;
+ 
+#if TARGET_OS_IPHONE
+#import "VSButton_iOS.h"
+#else
+#import "VSButton_Mac.h"
+#endif
 
+#import "VSStyles.h"
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation VSButton
 
 @synthesize font        = _font;
 @synthesize isVertical  = _isVertical;
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id)initWithFrame:(CGRect)frame {
-  if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = [UIColor clearColor];
-    self.contentMode = UIViewContentModeRedraw;
-  }
-  return self;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
 	[_font release]; _font = nil;
 	[super dealloc];
 }
 
+- (id)initWithFrame:(CGRect)frame {
+	if (self = [super initWithFrame:frame]) {
+		self.backgroundColor = [UIColor clearColor];
+		self.contentMode = UIViewContentModeRedraw;
+	}
+	return self;
+}
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Public
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 + (VSButton*)buttonWithStyle:(NSString*)selector {
-  VSButton* button = [[[self alloc] init] autorelease];
-  [button setStylesWithSelector:selector];
-  return button;
+	VSButton* button = [[[self alloc] init] autorelease];
+	[button setStylesWithSelector:selector];
+	return button;
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 + (VSButton*)buttonWithStyle:(NSString*)selector title:(NSString*)title {
-  VSButton* button = [[[self alloc] init] autorelease];
-  [button setTitle:title forState:UIControlStateNormal];
-  [button setStylesWithSelector:selector];
-  return button;
+	VSButton* button = [[[self alloc] init] autorelease];
+	[button setTitle:title forState:UIControlStateNormal];
+	[button setStylesWithSelector:selector];
+	return button;
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Private
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)keyForState:(UIControlState)state {
-  static NSString* normalKey = @"normal";
-  static NSString* highlighted = @"highlighted";
-  static NSString* selected = @"selected";
-  static NSString* disabled = @"disabled";
-  if (state & UIControlStateHighlighted) {
-    return highlighted;
-  } else if (state & UIControlStateSelected) {
-    return selected;
-  } else if (state & UIControlStateDisabled) {
-    return disabled;
-  } else {
-    return normalKey;
-  }
+	static NSString* normalKey = @"normal";
+	static NSString* highlighted = @"highlighted";
+	static NSString* selected = @"selected";
+	static NSString* disabled = @"disabled";
+	if (state & UIControlStateHighlighted) {
+		return highlighted;
+	} else if (state & UIControlStateSelected) {
+		return selected;
+	} else if (state & UIControlStateDisabled) {
+		return disabled;
+	} else {
+		return normalKey;
+	}
 }
+
+
+
+- (NSString*)titleForState:(UIControlState)state {
+	return nil;	
+}
+
+- (void)setTitle:(NSString*)title forState:(UIControlState)state {
+	return;	
+}
+
+- (NSString*)imageForState:(UIControlState)state {
+	return nil;	
+}
+
+- (void)setImage:(NSString*)title forState:(UIControlState)state {
+	return;	
+}
+
+- (VSStyle*)styleForState:(UIControlState)state {
+	return nil;	
+}
+
+- (void)setStyle:(VSStyle*)style forState:(UIControlState)state {
+	return;	
+}
+
+
+
+- (VSFont*)font {
+	if (!_font) {
+		_font = [[VSFont boldSystemFontOfSize:12] retain];
+	}
+	return _font;
+}
+
+- (void)setFont:(VSFont*)font {
+	if (![font isEqual:_font]) {
+		[_font release];
+		_font = [font retain];
+		[self setNeedsDisplay];
+	}
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+	[super setHighlighted:highlighted];
+	[self setNeedsDisplay];
+}
+
+- (void)setSelected:(BOOL)selected {
+	[super setSelected:selected];
+	[self setNeedsDisplay];
+}
+
+- (void)setEnabled:(BOOL)enabled {
+	[super setEnabled:enabled];
+	[self setNeedsDisplay];
+}
+
+- (BOOL)isAccessibilityElement {
+	return YES;
+}
+
+- (NSString *)accessibilityLabel {
+	//return [self titleForCurrentState];
+	return nil;
+}
+
+- (UIAccessibilityTraits)accessibilityTraits {
+	return [super accessibilityTraits] | UIAccessibilityTraitButton;
+}
+
+- (NSString*)textForLayerWithStyle:(VSStyle*)style {
+	//return [self titleForCurrentState];
+	return @"";
+}
+
+- (void)setStylesWithSelector:(NSString*)selector {
+	
+}
+
+@end
+
+
+/*
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString*)titleForCurrentState {
@@ -342,50 +407,6 @@ static const CGFloat kVPadding = 7;
 
   TTStyle* disabledStyle = [ss styleWithSelector:selector forState:UIControlStateDisabled];
   [self setStyle:disabledStyle forState:UIControlStateDisabled];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)suspendLoadingImages:(BOOL)suspended {
-  TTButtonContent* content = [self contentForCurrentState];
-  if (suspended) {
-    [content stopLoading];
-  } else if (!content.image) {
-    [content reload];
-  }
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (CGRect)rectForImage {
-  TTStyle* style = [self styleForCurrentState];
-  if (style) {
-    TTStyleContext* context = [[[TTStyleContext alloc] init] autorelease];
-    context.delegate = self;
-
-    TTPartStyle* imagePartStyle = [style styleForPart:@"image"];
-    if (imagePartStyle) {
-      TTImageStyle* imageStyle = [imagePartStyle.style firstStyleOfClass:[TTImageStyle class]];
-      TTBoxStyle* imageBoxStyle = [imagePartStyle.style firstStyleOfClass:[TTBoxStyle class]];
-      CGSize imageSize = [imagePartStyle.style addToSize:CGSizeZero context:context];
-
-      CGRect frame = context.contentFrame;
-      if (_isVertical) {
-        frame = self.bounds;
-        frame.origin.x += imageBoxStyle.margin.left;
-        frame.origin.y += imageBoxStyle.margin.top;
-      } else {
-        frame.size = imageSize;
-        frame.origin.x += imageBoxStyle.margin.left;
-        frame.origin.y += imageBoxStyle.margin.top;
-      }
-
-      UIImage* image = [self imageForCurrentState];
-      return [image convertRect:frame withContentMode:imageStyle.contentMode];
-    }
-  }
-
-  return CGRectZero;
 }
 
 

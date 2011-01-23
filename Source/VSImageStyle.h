@@ -15,8 +15,8 @@
 //  limitations under the License.
 //
 
-#import "VSStyle.h"
 #import "NSImage+ContentMode.h"
+#import "VSStyle.h"
 
 @interface VSImageStyle : VSStyle {
 	NSString* _imageURL;

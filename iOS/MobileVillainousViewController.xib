@@ -146,7 +146,7 @@
 							<object class="IBUIView" id="927239651">
 								<reference key="NSNextResponder" ref="113844512"/>
 								<int key="NSvFlags">301</int>
-								<string key="NSFrame">{{20, 314}, {82, 30}}</string>
+								<string key="NSFrame">{{20, 314}, {130, 44}}</string>
 								<reference key="NSSuperview" ref="113844512"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -786,7 +786,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>VSView</string>
+							<string>VSLabel</string>
 							<string>VSView</string>
 							<string>VSView</string>
 							<string>VSView</string>
@@ -831,7 +831,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">backButtonStyle</string>
-								<string key="candidateClassName">VSView</string>
+								<string key="candidateClassName">VSLabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">backgroundView</string>

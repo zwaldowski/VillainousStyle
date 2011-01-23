@@ -16,7 +16,7 @@
 //
 
 #import "VSMaskStyle.h"
-
+#import "NSImage+CGImage.h"
 
 @implementation VSMaskStyle
 

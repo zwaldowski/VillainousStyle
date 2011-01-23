@@ -15,16 +15,15 @@
 //  limitations under the License.
 //
 
-/*
-// Style
 #import "VSStyleDelegate.h"
 #import "VSGlobal.h"
 
-@class VSFont;
+@class VSFont, VSStyle;
 
-@interface VSButton : VSIControl <VSStyleDelegate> {
-  VSFont*               _font;
-  BOOL                  _isVertical;
+@interface VSButton : UIControl <VSStyleDelegate> {
+	VSFont*             _font;
+	BOOL                _isVertical;
+	NSMutableDictionary	*_content;
 }
 
 @property (nonatomic, retain) VSFont* font;
@@ -37,23 +36,16 @@
 - (NSString*)titleForState:(UIControlState)state;
 - (void)setTitle:(NSString*)title forState:(UIControlState)state;
 
-- (NSString*)imageForState:(UIControlState)state;
-- (void)setImage:(NSString*)title forState:(UIControlState)state;
-
 - (VSStyle*)styleForState:(UIControlState)state;
 - (void)setStyle:(VSStyle*)style forState:(UIControlState)state;
 
-*
+/*
  * Sets the styles for all control states using a single style selector.
  *
  * The method for the selector must accept a single argument for the control state.  It will
  * be called to return a style for each of the different control states.
- 
+ */
+
 - (void)setStylesWithSelector:(NSString*)selector;
 
-- (void)suspendLoadingImages:(BOOL)suspended;
-
-- (CGRect)rectForImage;
-
 @end
-*/

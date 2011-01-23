@@ -26,7 +26,7 @@
 	    [VSShadowStyle styleWithColor:VSColorRGBA(1, 1, 1, 0.9) blur:1 offset:CGSizeMake(0, 1) next:
 	      [VSLinearGradientFillStyle styleWithColor1:VSColorRGBA(1, 1, 1, 1) color2:VSColorRGBA(0.85, 0.86, 0.9, 1.0) next:
 	        [VSSolidBorderStyle styleWithColor:VSColorRGBA(0.5, 0.5, 0.5, 0.75) width:1 next:
-	          [VSImageStyle styleWithImage:kDoomIconImage defaultImage:nil contentMode:UIViewContentModeScaleToFill size:[kDoomIconImage size] next:
+	          [VSImageStyle styleWithImage:kDoomIconImage defaultImage:nil contentMode:UIViewContentModeScaleAspectFit size:[kDoomIconImage size] next:
 	            nil]]]]];
 }
 

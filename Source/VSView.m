@@ -16,10 +16,11 @@
 //
 
 #if TARGET_OS_IPHONE
-#import "VSViewiOS.h"
+#import "VSView_iOS.h"
 #else
-#import "VSViewMac.h"
+#import "VSView_Mac.h"
 #endif
+
 #import "VSStyles.h"
 #import "NSView+VSStyle.h"
 
@@ -89,7 +90,7 @@
 }
 
 
--(VSStyle *)style{
+-(VSStyle *)style {
 	if(_styleName){
 		return [[VSStyleSheet globalStyleSheet] styleWithSelector:_styleName];
 	}else{

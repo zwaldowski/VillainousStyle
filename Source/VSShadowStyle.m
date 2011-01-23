@@ -16,6 +16,7 @@
 //
 
 #import "VSShadowStyle.h"
+#import "NSColor+CGColor.h"
 
 @implementation VSShadowStyle
 

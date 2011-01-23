@@ -48,5 +48,6 @@ typedef enum {
 - (void)drawInRect:(CGRect)rect radius:(CGFloat)radius;
 - (void)drawInRect:(CGRect)rect radius:(CGFloat)radius contentMode:(UIViewContentMode)contentMode;
 
+- (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode;
 
 @end
