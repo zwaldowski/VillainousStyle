@@ -1,13 +1,12 @@
 Overview
 ========
 
-VillainousStyle is a drawing library for defining a visual style from a chain of individual drawing instructions. Each instruction modifies the drawing context to perform common drawing operations such as creating shadows, fills, borders, and shapes. It allows for multiple style sheets which can be used to theme an application in multiple visual contexts. VillainousStyle sits on top of CoreGraphics, and does not use WebKit for rendering at all. It is a fork of the VSStyle and VSShape classes, originally from the [Three20 project](http://github.com/joehewitt/three20).
+VillainousStyle is a drawing library for defining a visual style from a chain of individual drawing instructions. Each instruction modifies the drawing context to perform common drawing operations such as creating shadows, fills, borders, and shapes. It allows for multiple style sheets which can be used to theme an application in multiple visual contexts. VillainousStyle sits on top of CoreGraphics, and does not use WebKit for rendering at all. This is a fork of TTStyle and TTShape, originally from the [Three20 project](http://github.com/joehewitt/three20).
 
-This fork of VillainousStyle includes two Xcode projects, supporting a total of five targets:  
+This fork of VillainousStyle (originally ported/expunged by the brilliant [Steve Streza](http://stevestreza.com/)) includes two Xcode projects, supporting a total of four targets:  
 
 * VillainousStyle.framework for use on Mac OS X
-* libVillainousStyle.a for use on Mac OS X
-* VillainousTest, a Mac demo app
+* VillainousDemo, a Mac demo app
 * libVillainousStyle.a for use with iOS apps
 * MobileVillainous, an iOS demo app
 
@@ -16,16 +15,15 @@ Requirements
 
 * Mac OS X 10.5+ (building/running)
 * A version of Xcode that supports "latest iOS" and "latest Mac OS X" options
-* 
 
 Install
 =======
 
 Clone or download the repository.
 
-For use in Mac apps, build the framework using "VillainousStyle Mac.xcodeproj".
+For use in iOS, drag "VillainousStyle iOS.xcodeproj" into your Xcode project, enter the target settings for your application, add libVillainousStyle.a as a dependency, and then add libVillainousStyle.a to your target's "Link Binary with Libraries."
 
-For use in iOS, drag "VillainousStyle iOS.xcodeproj" into your Xcode project, enter the target settings for your application, add libVillainousStyle.a as a dependency, and then drag libVillainousStyle.a into your target's "Link Binary with Libraries."
+For use in Mac apps, build the framework using "VillainousStyle Mac.xcodeproj".  You may also follow the above instructions to dynamically build the project, especially with Xcode 4's Git support.
 
 For both platforms, add "-ObjC -all_load" to your project's "Other Linker Flags".
 
@@ -37,6 +35,13 @@ Stylesheets
 VSStyleSheet is an abstract superclass for a set of styles. To create your own stylesheet, subclass VSStyleSheet and add methods that return an instance of VSStyle for each style you wish to add. You will likely want to create a protocol for your styles to implement, to ensure that your stylesheet implements all the necessary styles.
 
 There is a global stylesheet, which can be thought of as the "active" stylesheet. Call `+[VSStyleSheet setGlobalStyleSheet:]` to change the active theme, which will fire a `VSStyleSheetChangedNotification`. When that gets fired, you'll want to tell your views to update their styles and redraw.
+
+Views
+===========
+
+This fork includes a number of view convenience classes:  VSView, VSLabel, and VSButton; these are all stylable counterparts to their NS/UI equivalents.  A future update will bring future parity to the label and button classes.
+
+VSView is a subclass of NSView/Mac and UIView/iOS with style support added; it can be used in place with no modification as a superclass to UIView subclasses.
 
 Features
 ======
@@ -74,6 +79,7 @@ VillainousStyle can draw both styles and shapes.  Styles affect drawing and posi
 * Extensions
  * UIColor/NSColor, UIImage/NSImage, UIFont/NSFont abstraction
  * Convenience views w/ UIView/NSView abstraction
+ * ![Interface Builder Support](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-before.png "Before VSStyle")
 
 Screenshots
 ===========
