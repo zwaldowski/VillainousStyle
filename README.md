@@ -79,14 +79,14 @@ VillainousStyle can draw both styles and shapes.  Styles affect drawing and posi
 * Extensions
  * UIColor/NSColor, UIImage/NSImage, UIFont/NSFont abstraction
  * Convenience views w/ UIView/NSView abstraction
- * ![Interface Builder Support](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-before.png "Before VSStyle")
+ * [Interface Builder Support](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-before.png "Before VSStyle")
 
 Screenshots
 ===========
 
-![Light Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/light-test-style.png "Light Test Style")
-![Dark Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/dark-test-style.png "Dark Test Style")
-![iOS Test](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-test.png "iOS Style")
+[Light Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/light-test-style.png "Light Test Style")
+[Dark Test Style](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/dark-test-style.png "Dark Test Style")
+[iOS Test](https://github.com/zwaldowski/VillainousStyle/raw/master/Screenshots/ios-test.png "iOS Style")
 
 License
 =======
